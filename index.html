@@ -9,26 +9,14 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏥</text></svg>">
 <title>Kolonoskopim — Hazırlık Rehberi</title>
 <style>
-:root {
-  --bx:#C8102E; --bx-l:rgba(200,16,46,0.08); --bx-m:rgba(200,16,46,0.15);
-  --dark:#1a1a1a; --body:#444; --muted:#999; --light:#f5f4f2;
-  --card:#fff; --border:#e8e6e3;
-  --green:#1a8d4e; --green-l:rgba(26,141,78,0.08);
-  --orange:#e67e22; --orange-l:rgba(230,126,34,0.08);
-  --red:#c0392b; --red-l:rgba(192,57,43,0.08);
-  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
-  --r:16px; --sh:0 2px 16px rgba(0,0,0,0.06);
-}
+:root{--bx:#C8102E;--bx-l:rgba(200,16,46,.08);--bx-m:rgba(200,16,46,.15);--dark:#1a1a1a;--body:#444;--muted:#999;--light:#f5f4f2;--card:#fff;--border:#e8e6e3;--green:#1a8d4e;--green-l:rgba(26,141,78,.08);--orange:#e67e22;--orange-l:rgba(230,126,34,.08);--red:#c0392b;--red-l:rgba(192,57,43,.08);--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--r:16px;--sh:0 2px 16px rgba(0,0,0,.06)}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{font-size:16px;-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{font-family:var(--sans);color:var(--body);background:var(--light);line-height:1.5;min-height:100dvh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-
-/* ═══ SCREENS ═══ */
-.scr{display:none;min-height:100dvh;padding-bottom:100px}
-.scr.on{display:block;animation:up .35s ease}
+.scr{display:none;min-height:100dvh;padding-bottom:100px}.scr.on{display:block;animation:up .35s ease}
 @keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 
-/* ═══ WIZARD ═══ */
+/* WIZARD */
 .wiz{min-height:100dvh;display:flex;flex-direction:column;justify-content:center;padding:32px 24px;text-align:center}
 .wiz-step{display:none}.wiz-step.on{display:block;animation:up .3s ease}
 .wiz-emoji{font-size:64px;margin-bottom:16px}
@@ -36,394 +24,402 @@ body{font-family:var(--sans);color:var(--body);background:var(--light);line-heig
 .wiz p.wiz-sub{font-size:16px;color:var(--muted);margin-bottom:28px;line-height:1.5}
 .wiz-input{width:100%;padding:18px 20px;border:2px solid var(--border);border-radius:14px;font-size:20px;font-family:var(--sans);color:var(--dark);background:var(--card);text-align:center;appearance:none;-webkit-appearance:none}
 .wiz-input:focus{outline:none;border-color:var(--bx)}
-
-/* Big option cards */
 .opts{display:flex;flex-direction:column;gap:12px;max-width:360px;margin:0 auto}
 .opt{display:flex;align-items:center;gap:16px;padding:20px;border:2.5px solid var(--border);border-radius:16px;background:var(--card);cursor:pointer;transition:all .2s;text-align:left}
-.opt:active{transform:scale(.98)}
-.opt.sel{border-color:var(--bx);background:var(--bx-l)}
+.opt:active{transform:scale(.98)}.opt.sel{border-color:var(--bx);background:var(--bx-l)}
 .opt-ico{font-size:36px;flex-shrink:0;width:48px;text-align:center}
-.opt-body h3{font-size:17px;font-weight:700;color:var(--dark)}
-.opt-body p{font-size:13px;color:var(--muted);margin-top:2px}
-
-/* Two-column options */
+.opt-body h3{font-size:17px;font-weight:700;color:var(--dark)}.opt-body p{font-size:13px;color:var(--muted);margin-top:2px}
 .opts2{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:360px;margin:0 auto}
 .opt2{display:flex;flex-direction:column;align-items:center;gap:8px;padding:24px 16px;border:2.5px solid var(--border);border-radius:16px;background:var(--card);cursor:pointer;transition:all .2s;text-align:center}
-.opt2:active{transform:scale(.97)}
-.opt2.sel{border-color:var(--bx);background:var(--bx-l)}
-.opt2 .o2-ico{font-size:40px}
-.opt2 h3{font-size:16px;font-weight:700;color:var(--dark)}
-.opt2 p{font-size:12px;color:var(--muted)}
-
+.opt2:active{transform:scale(.97)}.opt2.sel{border-color:var(--bx);background:var(--bx-l)}
+.opt2 .o2-ico{font-size:40px}.opt2 h3{font-size:16px;font-weight:700;color:var(--dark)}.opt2 p{font-size:12px;color:var(--muted)}
 .btn{display:block;width:100%;max-width:360px;margin:24px auto 0;padding:18px;border:none;border-radius:14px;font-size:18px;font-weight:700;font-family:var(--sans);cursor:pointer;transition:all .15s;letter-spacing:.3px}
-.btn:active{transform:scale(.97)}
-.btn-primary{background:var(--bx);color:#fff}
-.btn-primary:disabled{opacity:.3;cursor:not-allowed;transform:none}
-.btn-outline{background:var(--card);color:var(--bx);border:2px solid var(--bx)}
+.btn:active{transform:scale(.97)}.btn-primary{background:var(--bx);color:#fff}.btn-primary:disabled{opacity:.3;cursor:not-allowed;transform:none}
 .btn-ghost{background:none;color:var(--muted);font-size:14px;font-weight:500;margin-top:12px}
 
-/* ═══ NAV ═══ */
+/* NAV */
 .nav{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--border);padding:8px 0 env(safe-area-inset-bottom,10px);z-index:200;display:none}
 .nav.on{display:block}
 .nav-in{max-width:440px;margin:0 auto;display:flex;justify-content:space-around}
 .nb{display:flex;flex-direction:column;align-items:center;gap:3px;border:none;background:none;cursor:pointer;padding:6px 8px;color:var(--muted);font-size:11px;font-weight:600;font-family:var(--sans);transition:color .2s;min-width:56px}
-.nb .ni{font-size:24px;line-height:1;transition:transform .2s}
-.nb.on{color:var(--bx)}
-.nb.on .ni{transform:scale(1.15)}
+.nb .ni{font-size:24px;line-height:1;transition:transform .2s}.nb.on{color:var(--bx)}.nb.on .ni{transform:scale(1.15)}
 
-/* ═══ CONTAINER ═══ */
 .box{max-width:440px;margin:0 auto;padding:0 20px}
 
-/* ═══ HERO CARD ═══ */
+/* HERO */
 .hero{background:var(--dark);color:#fff;border-radius:var(--r);padding:28px 24px;margin:20px 0 16px;text-align:center;position:relative;overflow:hidden}
 .hero::after{content:'';position:absolute;top:-40px;right:-40px;width:140px;height:140px;border-radius:50%;background:rgba(200,16,46,.12)}
 .hero-label{font-size:12px;text-transform:uppercase;letter-spacing:2.5px;color:rgba(255,255,255,.45);margin-bottom:8px;font-weight:600}
 .hero-big{font-size:72px;font-weight:700;line-height:1;letter-spacing:-3px}
 .hero-unit{font-size:22px;color:var(--bx);font-weight:600;margin-left:2px}
 .hero-detail{font-size:14px;color:rgba(255,255,255,.55);margin-top:8px}
-.hero-today{font-size:60px;font-weight:700;line-height:1}
 
-/* ═══ PHASE BANNER ═══ */
+/* PHASE */
 .phase{border-radius:var(--r);padding:20px;margin:12px 0;position:relative;overflow:hidden}
 .phase.green{background:var(--green-l);border-left:4px solid var(--green)}
 .phase.orange{background:var(--orange-l);border-left:4px solid var(--orange)}
-.phase.red{background:var(--red-l);border-left:4px solid var(--red)}
 .phase.bx{background:var(--bx-l);border-left:4px solid var(--bx)}
 .phase-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px}
-.phase.green .phase-tag{color:var(--green)}
-.phase.orange .phase-tag{color:var(--orange)}
-.phase.red .phase-tag,.phase.bx .phase-tag{color:var(--bx)}
+.phase.green .phase-tag{color:var(--green)}.phase.orange .phase-tag{color:var(--orange)}.phase.bx .phase-tag{color:var(--bx)}
 .phase-title{font-size:20px;font-weight:700;color:var(--dark);margin-bottom:4px}
 .phase-desc{font-size:14px;color:var(--body);line-height:1.5}
 
-/* ═══ PROGRESS ═══ */
-.prog{margin:16px 0 8px}
-.prog-bar{background:var(--border);border-radius:8px;height:8px;overflow:hidden}
+.prog{margin:16px 0 8px}.prog-bar{background:var(--border);border-radius:8px;height:8px;overflow:hidden}
 .prog-fill{height:100%;background:var(--bx);border-radius:8px;transition:width .6s ease}
 .prog-labels{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:6px;font-weight:500}
 
-/* ═══ TASK CARDS ═══ */
-.tasks{margin:16px 0}
-.tasks-head{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--bx);margin-bottom:12px}
+/* TASKS */
+.tasks{margin:16px 0}.tasks-head{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--bx);margin-bottom:12px}
 .task{display:flex;align-items:flex-start;gap:14px;background:var(--card);border-radius:14px;padding:16px;margin:8px 0;box-shadow:var(--sh);cursor:pointer;transition:all .2s}
 .task:active{transform:scale(.99)}
 .tck{width:28px;height:28px;border:2.5px solid var(--border);border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s;font-size:16px;margin-top:1px}
-.task.done .tck{background:var(--green);border-color:var(--green);color:#fff}
-.task.done{opacity:.6}
-.t-body{flex:1}
-.t-body h4{font-size:16px;font-weight:600;color:var(--dark);line-height:1.3}
-.t-body p{font-size:13px;color:var(--muted);margin-top:3px;line-height:1.4}
+.task.done .tck{background:var(--green);border-color:var(--green);color:#fff}.task.done{opacity:.6}
+.t-body{flex:1}.t-body h4{font-size:16px;font-weight:600;color:var(--dark);line-height:1.3}.t-body p{font-size:13px;color:var(--muted);margin-top:3px;line-height:1.4}
 .t-time{font-size:13px;font-weight:700;color:var(--bx);white-space:nowrap;margin-top:2px}
 
-/* ═══ DIET TAB PILLS ═══ */
+/* DIET — Day tabs */
 .dtabs{display:flex;gap:8px;padding:20px 0 12px;overflow-x:auto;-webkit-overflow-scrolling:touch}
 .dtabs::-webkit-scrollbar{display:none}
 .dtab{flex-shrink:0;padding:12px 20px;border-radius:24px;border:2px solid var(--border);background:var(--card);font-size:14px;font-weight:600;color:var(--muted);cursor:pointer;transition:all .2s;white-space:nowrap}
 .dtab.on{background:var(--bx);border-color:var(--bx);color:#fff}
 
-/* ═══ FOOD CARDS ═══ */
-.fcard{background:var(--card);border-radius:var(--r);padding:20px;margin:10px 0;box-shadow:var(--sh)}
-.fcard h3{font-size:18px;font-weight:700;color:var(--dark);margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.fcard h3 .fico{font-size:24px}
-.fitems{display:flex;flex-direction:column;gap:6px}
-.fi{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;font-size:15px;font-weight:500}
-.fi.yes{background:var(--green-l);color:var(--green)}
-.fi.no{background:var(--red-l);color:var(--red);text-decoration:line-through;opacity:.65}
-.fi-mark{font-size:18px;flex-shrink:0;width:24px;text-align:center}
+/* DIET — Day header */
+.day-hero{background:var(--card);border-radius:var(--r);padding:20px;margin:8px 0;box-shadow:var(--sh);text-align:center}
+.day-hero .dh-ico{font-size:40px;margin-bottom:8px}
+.day-hero h2{font-size:20px;font-weight:700;color:var(--dark);margin-bottom:4px}
+.day-hero p{font-size:14px;color:var(--muted);line-height:1.5}
+.day-hero .dh-rule{display:inline-block;margin-top:10px;padding:8px 16px;background:var(--bx-l);border-radius:10px;font-size:14px;font-weight:600;color:var(--bx)}
 
-.meals-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
-.meal-card{background:var(--bx-l);border-radius:12px;padding:14px 10px;text-align:center}
-.meal-card h5{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--bx);margin-bottom:6px}
-.meal-card p{font-size:13px;color:var(--body);line-height:1.4}
+/* DIET — Hydration tracker */
+.hydro{background:var(--card);border-radius:var(--r);padding:20px;margin:10px 0;box-shadow:var(--sh)}
+.hydro-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.hydro-head h3{font-size:15px;font-weight:700;color:var(--dark)}
+.hydro-head span{font-size:14px;font-weight:600;color:var(--bx)}
+.hydro-bar{background:var(--border);border-radius:8px;height:10px;overflow:hidden;margin-bottom:10px}
+.hydro-fill{height:100%;background:linear-gradient(90deg,#4FC3F7,#0288D1);border-radius:8px;transition:width .4s ease}
+.glasses{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.glass{width:40px;height:40px;border-radius:10px;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;transition:all .2s;background:var(--card)}
+.glass.full{background:#E1F5FE;border-color:#4FC3F7}
+.glass:active{transform:scale(.9)}
 
-/* ═══ DRUG PROTOCOL ═══ */
+/* DIET — Search */
+.diet-search{position:relative;margin:10px 0}
+.diet-search input{width:100%;padding:16px 16px 16px 48px;border:2px solid var(--border);border-radius:14px;font-size:16px;font-family:var(--sans);color:var(--dark);background:var(--card)}
+.diet-search input:focus{outline:none;border-color:var(--bx)}
+.diet-search input::placeholder{color:var(--muted)}
+.diet-search .ds-ico{position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:20px}
+.search-results{margin:8px 0}
+.sr-item{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--card);border-radius:12px;margin:6px 0;box-shadow:var(--sh)}
+.sr-item .sr-name{font-size:15px;font-weight:600;color:var(--dark)}
+.sr-item .sr-cat{font-size:12px;color:var(--muted)}
+.sr-badge{padding:6px 12px;border-radius:8px;font-size:13px;font-weight:700}
+.sr-badge.yes{background:var(--green-l);color:var(--green)}
+.sr-badge.no{background:var(--red-l);color:var(--red)}
+.sr-badge.maybe{background:var(--orange-l);color:var(--orange)}
+.sr-empty{text-align:center;padding:20px;color:var(--muted);font-size:14px}
+
+/* DIET — Meal timeline */
+.meal-tl{margin:16px 0}
+.meal-tl-head{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--bx);margin-bottom:10px}
+.meal-card{background:var(--card);border-radius:14px;padding:16px;margin:8px 0;box-shadow:var(--sh);display:flex;gap:14px;align-items:flex-start}
+.meal-card .mc-time{min-width:56px;text-align:center;flex-shrink:0}
+.meal-card .mc-time .mt-hour{font-size:16px;font-weight:700;color:var(--dark)}
+.meal-card .mc-time .mt-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--bx)}
+.meal-card .mc-body{flex:1;border-left:2px solid var(--border);padding-left:14px}
+.meal-card .mc-body h4{font-size:15px;font-weight:600;color:var(--dark);margin-bottom:4px}
+.meal-card .mc-body p{font-size:13px;color:var(--muted);line-height:1.5}
+.meal-card .mc-body .mc-items{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.mc-chip{display:inline-flex;align-items:center;gap:4px;padding:6px 10px;border-radius:8px;font-size:12px;font-weight:500;background:var(--green-l);color:var(--green)}
+
+/* DIET — Category accordions */
+.cat-section{margin:16px 0}
+.cat-section .cs-head{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--bx);margin-bottom:10px}
+.acc{background:var(--card);border-radius:14px;margin:6px 0;box-shadow:var(--sh);overflow:hidden}
+.acc-head{display:flex;align-items:center;gap:12px;padding:16px;cursor:pointer;transition:background .2s}
+.acc-head:active{background:var(--light)}
+.acc-head .ah-ico{font-size:24px;flex-shrink:0}
+.acc-head h4{font-size:15px;font-weight:600;color:var(--dark);flex:1}
+.acc-head .ah-arrow{font-size:16px;color:var(--muted);transition:transform .3s}
+.acc.open .ah-arrow{transform:rotate(180deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.acc.open .acc-body{max-height:2000px}
+.acc-inner{padding:0 16px 16px}
+.fi{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;font-size:14px;font-weight:500;margin:3px 0}
+.fi.yes{background:var(--green-l);color:var(--green)}.fi.no{background:var(--red-l);color:var(--red);text-decoration:line-through;opacity:.7}
+.fi.maybe{background:var(--orange-l);color:var(--orange)}
+.fi-m{font-size:16px;flex-shrink:0;width:22px;text-align:center}
+
+/* DRUG */
 .drug-head{background:var(--card);border-radius:var(--r);padding:20px;margin:20px 0 12px;box-shadow:var(--sh);display:flex;align-items:center;gap:16px}
-.drug-head .dh-ico{font-size:44px}
-.drug-head h3{font-size:18px;font-weight:700;color:var(--dark)}
-.drug-head p{font-size:13px;color:var(--muted);margin-top:2px}
-
-.timeline{position:relative;padding-left:32px;margin:8px 0}
-.timeline::before{content:'';position:absolute;left:12px;top:0;bottom:0;width:2px;background:var(--border)}
+.drug-head .dh-ico{font-size:44px}.drug-head h3{font-size:18px;font-weight:700;color:var(--dark)}.drug-head p{font-size:13px;color:var(--muted);margin-top:2px}
+.timeline{position:relative;padding-left:32px;margin:8px 0}.timeline::before{content:'';position:absolute;left:12px;top:0;bottom:0;width:2px;background:var(--border)}
 .tl-item{position:relative;margin:16px 0}
 .tl-dot{position:absolute;left:-32px;top:2px;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;z-index:1}
-.tl-dot.bx{background:var(--bx)}
-.tl-dot.red{background:var(--red)}
-.tl-dot.green{background:var(--green)}
+.tl-dot.bx{background:var(--bx)}.tl-dot.red{background:var(--red)}
 .tl-card{background:var(--card);border-radius:14px;padding:18px;box-shadow:var(--sh)}
 .tl-time{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--bx);margin-bottom:4px}
-.tl-title{font-size:17px;font-weight:700;color:var(--dark);margin-bottom:4px}
-.tl-desc{font-size:14px;color:var(--body);line-height:1.5}
+.tl-title{font-size:17px;font-weight:700;color:var(--dark);margin-bottom:4px}.tl-desc{font-size:14px;color:var(--body);line-height:1.5}
 .tl-tip{margin-top:10px;padding:10px 14px;background:var(--bx-l);border-radius:10px;font-size:13px;color:var(--bx);font-weight:500}
-
 .stop-bar{background:var(--red);color:#fff;border-radius:14px;padding:20px;margin:16px 0;text-align:center;font-size:18px;font-weight:700}
 .stop-bar small{display:block;font-size:13px;font-weight:400;margin-top:4px;opacity:.85}
-
 .info-card{background:var(--bx-l);border-radius:14px;padding:16px 18px;margin:10px 0;border-left:4px solid var(--bx)}
 .info-card h4{font-size:13px;font-weight:700;color:var(--bx);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
 .info-card p{font-size:14px;color:var(--body);line-height:1.5}
-
 .tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
 .tip-card{background:var(--card);border-radius:14px;padding:16px;text-align:center;box-shadow:var(--sh)}
-.tip-card .tc-ico{font-size:32px;margin-bottom:6px}
-.tip-card p{font-size:13px;color:var(--body);line-height:1.4;font-weight:500}
+.tip-card .tc-ico{font-size:32px;margin-bottom:6px}.tip-card p{font-size:13px;color:var(--body);line-height:1.4;font-weight:500}
 
-/* ═══ STOOL ═══ */
-.stool-head{text-align:center;padding:24px 0 8px}
-.stool-head h2{font-size:22px;font-weight:700;color:var(--dark)}
-.stool-head p{font-size:15px;color:var(--muted);margin-top:4px}
+/* STOOL */
+.stool-head{text-align:center;padding:24px 0 8px}.stool-head h2{font-size:22px;font-weight:700;color:var(--dark)}.stool-head p{font-size:15px;color:var(--muted);margin-top:4px}
 .stools{display:flex;flex-direction:column;gap:10px;margin:16px 0}
-.si{display:flex;align-items:center;gap:16px;background:var(--card);border-radius:16px;padding:18px;box-shadow:var(--sh);cursor:pointer;border:2.5px solid transparent;transition:all .2s}
-.si:active{transform:scale(.98)}
-.si.sel{border-color:var(--bx);background:var(--bx-l)}
+.si{display:flex;align-items:center;gap:16px;background:var(--card);border-radius:16px;padding:18px;box-shadow:var(--sh);cursor:pointer;border:2.5px solid transparent;transition:all .2s;position:relative}
+.si:active{transform:scale(.98)}.si.sel{border-color:var(--bx);background:var(--bx-l)}
 .si-dot{width:48px;height:48px;border-radius:50%;flex-shrink:0}
-.si-body h4{font-size:16px;font-weight:600;color:var(--dark)}
-.si-body p{font-size:13px;color:var(--muted);margin-top:2px}
+.si-body h4{font-size:16px;font-weight:600;color:var(--dark)}.si-body p{font-size:13px;color:var(--muted);margin-top:2px}
 .si-target{position:absolute;right:16px;font-size:10px;font-weight:700;letter-spacing:1px;color:var(--bx)}
-.si{position:relative}
-
 .sfb{background:var(--card);border-radius:var(--r);padding:28px 24px;margin:16px 0;box-shadow:var(--sh);text-align:center;display:none}
 .sfb.on{display:block;animation:up .3s ease}
-.sfb-emoji{font-size:56px;margin-bottom:10px}
-.sfb-msg{font-size:20px;font-weight:700;color:var(--dark)}
-.sfb-detail{font-size:14px;color:var(--muted);margin-top:8px;line-height:1.6}
+.sfb-emoji{font-size:56px;margin-bottom:10px}.sfb-msg{font-size:20px;font-weight:700;color:var(--dark)}.sfb-detail{font-size:14px;color:var(--muted);margin-top:8px;line-height:1.6}
 
-/* ═══ CHECKLIST ═══ */
+/* CHECKLIST */
 .cl-progress{text-align:center;padding:20px 0 8px}
-.cl-progress .cl-ring{display:inline-block;width:80px;height:80px;border-radius:50%;border:6px solid var(--border);position:relative;margin-bottom:8px}
-.cl-progress .cl-ring::after{content:attr(data-pct);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:var(--dark)}
+.cl-ring{display:inline-block;width:80px;height:80px;border-radius:50%;position:relative;margin-bottom:8px}
+.cl-ring::after{content:attr(data-pct);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:var(--dark)}
 .cl-progress p{font-size:14px;color:var(--muted);font-weight:500}
-
 .cl-card{background:var(--card);border-radius:var(--r);padding:8px;margin:12px 0;box-shadow:var(--sh)}
 .cli{display:flex;align-items:center;gap:14px;padding:16px 14px;border-bottom:1px solid var(--border);cursor:pointer;transition:all .15s}
-.cli:last-child{border-bottom:none}
-.cli:active{background:var(--light)}
+.cli:last-child{border-bottom:none}.cli:active{background:var(--light)}
 .cl-box{width:28px;height:28px;border:2.5px solid var(--border);border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s;font-size:16px}
 .cli.chk .cl-box{background:var(--green);border-color:var(--green);color:#fff}
-.cl-txt{font-size:15px;color:var(--dark);font-weight:500;flex:1}
-.cli.chk .cl-txt{color:var(--muted);text-decoration:line-through}
-
-/* ═══ WARNING / EMERGENCY ═══ */
+.cl-txt{font-size:15px;color:var(--dark);font-weight:500;flex:1}.cli.chk .cl-txt{color:var(--muted);text-decoration:line-through}
 .warn{background:linear-gradient(135deg,#8B2500,#c0392b);color:#fff;border-radius:var(--r);padding:20px;margin:16px 0}
-.warn h3{font-size:16px;font-weight:700;margin-bottom:6px}
-.warn p{font-size:14px;line-height:1.6;opacity:.9}
-.warn strong{opacity:1}
-
+.warn h3{font-size:16px;font-weight:700;margin-bottom:6px}.warn p{font-size:14px;line-height:1.6;opacity:.9}.warn strong{opacity:1}
 .emerg{background:var(--card);border:2.5px solid var(--red);border-radius:var(--r);padding:20px;margin:16px 0}
 .emerg h3{color:var(--red);font-size:16px;font-weight:700;margin-bottom:10px}
-.emerg li{padding:6px 0;font-size:15px;color:var(--body);list-style:none}
-.emerg li::before{content:"⚠️ ";margin-right:4px}
+.emerg li{padding:6px 0;font-size:15px;color:var(--body);list-style:none}.emerg li::before{content:"⚠️ ";margin-right:4px}
 .emer-btn{display:block;width:100%;padding:18px;margin-top:16px;background:var(--red);color:#fff;border:none;border-radius:14px;font-size:18px;font-weight:700;cursor:pointer;text-align:center;text-decoration:none;font-family:var(--sans)}
-
 .med{background:var(--card);border-radius:var(--r);padding:18px;margin:8px 0;box-shadow:var(--sh)}
 .med h4{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:4px;display:flex;align-items:center;gap:8px}
 .med p{font-size:14px;color:var(--muted);line-height:1.5}
-
-/* Footer */
-.foot{text-align:center;padding:32px 16px 16px;font-size:12px;color:var(--muted)}
-.foot strong{color:var(--dark)}
-
-/* Reset button */
-.reset-wrap{text-align:center;margin:24px 0}
-.reset-btn{background:none;border:1.5px solid var(--border);border-radius:10px;padding:10px 20px;font-size:13px;color:var(--muted);cursor:pointer;font-family:var(--sans)}
+.foot{text-align:center;padding:32px 16px 16px;font-size:12px;color:var(--muted)}.foot strong{color:var(--dark)}
+.reset-wrap{text-align:center;margin:24px 0}.reset-btn{background:none;border:1.5px solid var(--border);border-radius:10px;padding:10px 20px;font-size:13px;color:var(--muted);cursor:pointer;font-family:var(--sans)}
 </style>
 </head>
 <body>
 
-<!-- ═══ WIZARD ═══ -->
-<div id="wizard" class="scr on">
-<div class="wiz">
+<!-- WIZARD -->
+<div id="wizard" class="scr on"><div class="wiz">
+  <div class="wiz-step on" id="ws1"><div class="wiz-emoji">📅</div><h2>İşleminiz ne zaman?</h2><p class="wiz-sub">Kolonoskopi tarihinizi seçin</p><input type="date" class="wiz-input" id="wDate"><button class="btn btn-primary" style="margin-top:20px" id="ws1next" disabled onclick="wizNext(2)">Devam →</button></div>
+  <div class="wiz-step" id="ws2"><div class="wiz-emoji">🕐</div><h2>Sabah mı, öğleden sonra mı?</h2><p class="wiz-sub">İşlem saatinizi seçin</p><div class="opts2"><div class="opt2" onclick="pickTime('morning',this)"><div class="o2-ico">🌅</div><h3>Sabah</h3><p>08:00 – 12:00</p></div><div class="opt2" onclick="pickTime('afternoon',this)"><div class="o2-ico">🌇</div><h3>Öğleden Sonra</h3><p>13:00 ve sonrası</p></div></div><button class="btn btn-primary" id="ws2next" disabled onclick="wizNext(3)">Devam →</button><button class="btn btn-ghost" onclick="wizBack(1)">← Geri</button></div>
+  <div class="wiz-step" id="ws3"><div class="wiz-emoji">💊</div><h2>Hangi ilacı kullanacaksınız?</h2><p class="wiz-sub">Doktorunuzun reçete ettiği ilacı seçin</p><div class="opts"><div class="opt" onclick="pickDrug('peg2',this)"><div class="opt-ico">🟦</div><div class="opt-body"><h3>Pegdin</h3><p>PEG 2 Litre — En yaygın</p></div></div><div class="opt" onclick="pickDrug('picoprep',this)"><div class="opt-ico">🟧</div><div class="opt-body"><h3>Picoprep</h3><p>2 Saşe — Kolay içilir</p></div></div><div class="opt" onclick="pickDrug('fortrans',this)"><div class="opt-ico">🟪</div><div class="opt-body"><h3>Fortrans</h3><p>PEG 4 Litre — Klasik</p></div></div><div class="opt" onclick="pickDrug('phospho',this)"><div class="opt-ico">🟩</div><div class="opt-body"><h3>Fleet Fosfo-Soda</h3><p>2 × 45 ml — Düşük hacim</p></div></div></div><button class="btn btn-primary" id="ws3next" disabled onclick="wizNext(4)">Devam →</button><button class="btn btn-ghost" onclick="wizBack(2)">← Geri</button></div>
+  <div class="wiz-step" id="ws4"><div class="wiz-emoji">🚀</div><h2>Hazırsınız!</h2><p class="wiz-sub">Rehberiniz hazırlandı. Size adım adım yol göstereceğiz.</p><button class="btn btn-primary" onclick="startApp()">Başlayalım</button><button class="btn btn-ghost" onclick="wizBack(3)">← Geri</button></div>
+</div></div>
 
-  <div class="wiz-step on" id="ws1">
-    <div class="wiz-emoji">📅</div>
-    <h2>İşleminiz ne zaman?</h2>
-    <p class="wiz-sub">Kolonoskopi tarihinizi seçin</p>
-    <input type="date" class="wiz-input" id="wDate">
-    <button class="btn btn-primary" style="margin-top:20px" id="ws1next" disabled onclick="wizNext(2)">Devam →</button>
+<!-- DASHBOARD -->
+<div id="home" class="scr"><div class="box">
+  <div class="hero"><div class="hero-label">İşleme Kalan</div><div><span class="hero-big" id="hNum">3</span><span class="hero-unit" id="hUnit">gün</span></div><div class="hero-detail" id="hDetail"></div></div>
+  <div id="phaseEl"></div>
+  <div class="prog"><div class="prog-bar"><div class="prog-fill" id="pFill"></div></div><div class="prog-labels"><span>Başlangıç</span><span id="pPct"></span><span>İşlem</span></div></div>
+  <div class="tasks"><div class="tasks-head">📋 Bugünkü Görevler</div><div id="tList"></div></div>
+  <div class="reset-wrap"><button class="reset-btn" onclick="resetApp()">⟲ Sıfırla</button></div>
+</div></div>
+
+<!-- DIET -->
+<div id="diet" class="scr"><div class="box">
+  <div class="dtabs" id="dTabs"></div>
+  <div id="dayHero"></div>
+  <div id="hydroEl"></div>
+  <div class="diet-search"><span class="ds-ico">🔍</span><input type="text" id="searchInput" placeholder="Bu yenilir mi? (örn: mercimek)" oninput="doSearch(this.value)"></div>
+  <div id="searchRes" class="search-results"></div>
+  <div id="mealTL"></div>
+  <div id="catAccs"></div>
+</div></div>
+
+<!-- DRUG -->
+<div id="drug" class="scr"><div class="box" id="drugEl"></div></div>
+
+<!-- STOOL -->
+<div id="stool" class="scr"><div class="box">
+  <div class="stool-head"><h2>📊 Nasıl Görünüyor?</h2><p>Dışkınızın görünümünü seçin</p></div>
+  <div class="stools">
+    <div class="si" onclick="pickStool(1)"><div class="si-dot" style="background:#3E2723"></div><div class="si-body"><h4>Koyu Kahve — Katı</h4><p>Henüz başlangıç</p></div></div>
+    <div class="si" onclick="pickStool(2)"><div class="si-dot" style="background:#795548"></div><div class="si-body"><h4>Kahverengi — Bulanık</h4><p>İlaç etki etmeye başladı</p></div></div>
+    <div class="si" onclick="pickStool(3)"><div class="si-dot" style="background:#BCAAA4"></div><div class="si-body"><h4>Açık Kahve — Yarı Berrak</h4><p>İyi ilerliyorsunuz</p></div></div>
+    <div class="si" onclick="pickStool(4)"><div class="si-dot" style="background:#FDD835"></div><div class="si-body"><h4>Sarımsı — Berrak</h4><p>Neredeyse hazırsınız!</p></div><span class="si-target">HEDEF ✓</span></div>
+    <div class="si" onclick="pickStool(5)"><div class="si-dot" style="background:#FFF9C4;border:1px solid #eee"></div><div class="si-body"><h4>Berrak — Renksiz</h4><p>Mükemmel temizlik!</p></div><span class="si-target">HEDEF ✓</span></div>
   </div>
+  <div class="sfb" id="sFb"></div>
+</div></div>
 
-  <div class="wiz-step" id="ws2">
-    <div class="wiz-emoji">🕐</div>
-    <h2>Sabah mı, öğleden sonra mı?</h2>
-    <p class="wiz-sub">İşlem saatinizi seçin</p>
-    <div class="opts2">
-      <div class="opt2" onclick="pickTime('morning',this)">
-        <div class="o2-ico">🌅</div>
-        <h3>Sabah</h3>
-        <p>08:00 – 12:00</p>
-      </div>
-      <div class="opt2" onclick="pickTime('afternoon',this)">
-        <div class="o2-ico">🌇</div>
-        <h3>Öğleden Sonra</h3>
-        <p>13:00 ve sonrası</p>
-      </div>
-    </div>
-    <button class="btn btn-primary" id="ws2next" disabled onclick="wizNext(3)">Devam →</button>
-    <button class="btn btn-ghost" onclick="wizBack(1)">← Geri</button>
-  </div>
+<!-- CHECKLIST -->
+<div id="check" class="scr"><div class="box">
+  <div class="cl-progress"><div class="cl-ring" id="clRing" data-pct="0%"></div><p id="clLabel">0 / 15 tamamlandı</p></div>
+  <div class="warn"><h3>⚠️ GLP-1 İlaçları — Çok Önemli</h3><p><strong>Ozempic, Wegovy, Mounjaro, Saxenda, Rybelsus, Trulicity</strong> kullanıyorsanız — işlemden <strong>1–2 hafta önce kesilmesi</strong> gerekebilir. Mutlaka doktorunuza danışın.</p></div>
+  <div class="med"><h4>💉 Kan Sulandırıcılar</h4><p>Aspirin, Coumadin, Xarelto, Eliquis — <strong>mutlaka doktorunuza danışın.</strong></p></div>
+  <div class="med"><h4>💊 Diyabet İlaçları</h4><p>İnsülin doz ayarı gerekir. Metformin işlem sabahı kesilir.</p></div>
+  <div class="med"><h4>🔴 Demir Preparatları</h4><p><strong>5 gün önce kesin.</strong> Dışkıyı siyahlaştırır.</p></div>
+  <div class="med"><h4>💙 Tansiyon İlaçları</h4><p>İşlem sabahı az su ile alın (doktor onayıyla).</p></div>
+  <div class="cl-card" id="clItems"></div>
+  <div class="emerg"><h3>Acil Durumlar — Hemen Başvurun</h3><ul><li>Şiddetli karın ağrısı</li><li>38.5°C üzeri ateş</li><li>Belirgin kanama veya ciddi kusma</li><li>Göğüs ağrısı veya nefes darlığı</li></ul><a href="tel:112" class="emer-btn">🚨 112'yi Ara</a></div>
+  <div class="foot">Doktorunuzun size özel talimatlarına uyunuz.<br><strong>Doç. Dr. Cem Şimşek</strong> — Gastroenteroloji · 2025</div>
+</div></div>
 
-  <div class="wiz-step" id="ws3">
-    <div class="wiz-emoji">💊</div>
-    <h2>Hangi ilacı kullanacaksınız?</h2>
-    <p class="wiz-sub">Doktorunuzun reçete ettiği ilacı seçin</p>
-    <div class="opts">
-      <div class="opt" onclick="pickDrug('peg2',this)">
-        <div class="opt-ico">🟦</div>
-        <div class="opt-body"><h3>Pegdin</h3><p>PEG 2 Litre — En yaygın</p></div>
-      </div>
-      <div class="opt" onclick="pickDrug('picoprep',this)">
-        <div class="opt-ico">🟧</div>
-        <div class="opt-body"><h3>Picoprep</h3><p>2 Saşe — Kolay içilir</p></div>
-      </div>
-      <div class="opt" onclick="pickDrug('fortrans',this)">
-        <div class="opt-ico">🟪</div>
-        <div class="opt-body"><h3>Fortrans</h3><p>PEG 4 Litre — Klasik</p></div>
-      </div>
-      <div class="opt" onclick="pickDrug('phospho',this)">
-        <div class="opt-ico">🟩</div>
-        <div class="opt-body"><h3>Fleet Fosfo-Soda</h3><p>2 × 45 ml — Düşük hacim</p></div>
-      </div>
-    </div>
-    <button class="btn btn-primary" id="ws3next" disabled onclick="wizNext(4)">Devam →</button>
-    <button class="btn btn-ghost" onclick="wizBack(2)">← Geri</button>
-  </div>
-
-  <div class="wiz-step" id="ws4">
-    <div class="wiz-emoji">🚀</div>
-    <h2>Hazırsınız!</h2>
-    <p class="wiz-sub">Rehberiniz hazırlandı. Size adım adım yol göstereceğiz.</p>
-    <button class="btn btn-primary" onclick="startApp()">Başlayalım</button>
-    <button class="btn btn-ghost" onclick="wizBack(3)">← Geri</button>
-  </div>
-
-</div>
-</div>
-
-<!-- ═══ DASHBOARD ═══ -->
-<div id="home" class="scr">
-  <div class="box">
-    <div class="hero" id="heroCard">
-      <div class="hero-label">İşleme Kalan</div>
-      <div><span class="hero-big" id="hNum">3</span><span class="hero-unit" id="hUnit">gün</span></div>
-      <div class="hero-detail" id="hDetail"></div>
-    </div>
-    <div id="phaseEl"></div>
-    <div class="prog"><div class="prog-bar"><div class="prog-fill" id="pFill"></div></div><div class="prog-labels"><span>Başlangıç</span><span id="pPct"></span><span>İşlem</span></div></div>
-    <div class="tasks"><div class="tasks-head">📋 Bugünkü Görevler</div><div id="tList"></div></div>
-    <div class="reset-wrap"><button class="reset-btn" onclick="resetApp()">⟲ Sıfırla</button></div>
-  </div>
-</div>
-
-<!-- ═══ DIET ═══ -->
-<div id="diet" class="scr">
-  <div class="box">
-    <div class="dtabs" id="dTabs"></div>
-    <div id="dContent"></div>
-  </div>
-</div>
-
-<!-- ═══ DRUG ═══ -->
-<div id="drug" class="scr">
-  <div class="box" id="drugEl"></div>
-</div>
-
-<!-- ═══ STOOL ═══ -->
-<div id="stool" class="scr">
-  <div class="box">
-    <div class="stool-head">
-      <h2>📊 Nasıl Görünüyor?</h2>
-      <p>Dışkınızın görünümünü seçin</p>
-    </div>
-    <div class="stools">
-      <div class="si" onclick="pickStool(1)"><div class="si-dot" style="background:#3E2723"></div><div class="si-body"><h4>Koyu Kahve — Katı</h4><p>Henüz başlangıç</p></div></div>
-      <div class="si" onclick="pickStool(2)"><div class="si-dot" style="background:#795548"></div><div class="si-body"><h4>Kahverengi — Bulanık</h4><p>İlaç etki etmeye başladı</p></div></div>
-      <div class="si" onclick="pickStool(3)"><div class="si-dot" style="background:#BCAAA4"></div><div class="si-body"><h4>Açık Kahve — Yarı Berrak</h4><p>İyi ilerliyorsunuz</p></div></div>
-      <div class="si" onclick="pickStool(4)"><div class="si-dot" style="background:#FDD835"></div><div class="si-body"><h4>Sarımsı — Berrak</h4><p>Neredeyse hazırsınız!</p></div><span class="si-target">HEDEF ✓</span></div>
-      <div class="si" onclick="pickStool(5)"><div class="si-dot" style="background:#FFF9C4;border:1px solid #eee"></div><div class="si-body"><h4>Berrak — Renksiz</h4><p>Mükemmel temizlik!</p></div><span class="si-target">HEDEF ✓</span></div>
-    </div>
-    <div class="sfb" id="sFb"></div>
-  </div>
-</div>
-
-<!-- ═══ CHECKLIST ═══ -->
-<div id="check" class="scr">
-  <div class="box">
-    <div class="cl-progress"><div class="cl-ring" id="clRing" data-pct="0%"></div><p id="clLabel">0 / 15 tamamlandı</p></div>
-
-    <div class="warn">
-      <h3>⚠️ GLP-1 İlaçları — Çok Önemli</h3>
-      <p><strong>Ozempic, Wegovy, Mounjaro, Saxenda, Rybelsus, Trulicity</strong> kullanıyorsanız — işlemden <strong>1–2 hafta önce kesilmesi</strong> gerekebilir. Mutlaka doktorunuza danışın.</p>
-    </div>
-
-    <div class="med"><h4>💉 Kan Sulandırıcılar</h4><p>Aspirin, Coumadin, Xarelto, Eliquis — <strong>mutlaka doktorunuza danışın.</strong></p></div>
-    <div class="med"><h4>💊 Diyabet İlaçları</h4><p>İnsülin doz ayarı gerekir. Metformin işlem sabahı kesilir.</p></div>
-    <div class="med"><h4>🔴 Demir Preparatları</h4><p><strong>5 gün önce kesin.</strong> Dışkıyı siyahlaştırır.</p></div>
-    <div class="med"><h4>💙 Tansiyon İlaçları</h4><p>İşlem sabahı az su ile alın (doktor onayıyla).</p></div>
-
-    <div class="cl-card" id="clItems"></div>
-
-    <div class="emerg">
-      <h3>Acil Durumlar — Hemen Başvurun</h3>
-      <ul>
-        <li>Şiddetli karın ağrısı</li>
-        <li>38.5°C üzeri ateş</li>
-        <li>Belirgin kanama veya ciddi kusma</li>
-        <li>Göğüs ağrısı veya nefes darlığı</li>
-      </ul>
-      <a href="tel:112" class="emer-btn">🚨 112'yi Ara</a>
-    </div>
-
-    <div class="foot">Doktorunuzun size özel talimatlarına uyunuz.<br><strong>Doç. Dr. Cem Şimşek</strong> — Gastroenteroloji · 2025</div>
-  </div>
-</div>
-
-<!-- ═══ NAV ═══ -->
-<nav class="nav" id="nav">
-  <div class="nav-in">
-    <button class="nb on" onclick="go('home')"><span class="ni">🏠</span>Ana Sayfa</button>
-    <button class="nb" onclick="go('diet')"><span class="ni">🥗</span>Diyet</button>
-    <button class="nb" onclick="go('drug')"><span class="ni">💊</span>İlaç</button>
-    <button class="nb" onclick="go('stool')"><span class="ni">📊</span>Takip</button>
-    <button class="nb" onclick="go('check')"><span class="ni">✅</span>Kontrol</button>
-  </div>
-</nav>
+<!-- NAV -->
+<nav class="nav" id="nav"><div class="nav-in">
+  <button class="nb on" onclick="go('home')"><span class="ni">🏠</span>Ana Sayfa</button>
+  <button class="nb" onclick="go('diet')"><span class="ni">🥗</span>Diyet</button>
+  <button class="nb" onclick="go('drug')"><span class="ni">💊</span>İlaç</button>
+  <button class="nb" onclick="go('stool')"><span class="ni">📊</span>Takip</button>
+  <button class="nb" onclick="go('check')"><span class="ni">✅</span>Kontrol</button>
+</div></nav>
 
 <script>
-let S={date:null,time:null,drug:null,tasks:{},checks:{},stool:null};
-const K='kprep2';
-const save=()=>localStorage.setItem(K,JSON.stringify(S));
-const load=()=>{try{const s=localStorage.getItem(K);if(s)S=JSON.parse(s)}catch(e){}};
-
-// ═══ WIZARD ═══
+let S={date:null,time:null,drug:null,tasks:{},checks:{},stool:null,water:{}};
+const K='kprep3',save=()=>localStorage.setItem(K,JSON.stringify(S)),load=()=>{try{const s=localStorage.getItem(K);if(s)S=JSON.parse(s)}catch(e){}};
 const $=id=>document.getElementById(id);
+
+// ═══ FOOD DATABASE ═══
+// Format: [name, category, day3, day2, day1] where 1=yes, 0=no, 2=maybe/caution
+const FOODS=[
+// EKMEK & TAHILLAR
+['Beyaz ekmek','Ekmek',1,1,0],['Pide','Ekmek',1,1,0],['Yufka','Ekmek',1,1,0],['Simit','Ekmek',1,0,0],['Bazlama','Ekmek',1,1,0],
+['Beyaz pirinç pilavı','Tahıl',1,1,0],['Şehriye','Tahıl',1,1,0],['Makarna (sade)','Tahıl',1,1,0],['İrmik','Tahıl',1,1,0],
+['Galeta','Tahıl',1,1,0],['Kraker','Tahıl',1,1,0],['Bisküvi (sade)','Tahıl',1,1,0],['Grissini','Tahıl',1,1,0],
+['Tam buğday ekmek','Tahıl',0,0,0],['Esmer pirinç','Tahıl',0,0,0],['Bulgur','Tahıl',0,0,0],['Yulaf','Tahıl',0,0,0],
+['Mısır ekmeği','Tahıl',0,0,0],['Çavdar ekmeği','Tahıl',0,0,0],['Kepekli ekmek','Tahıl',0,0,0],['Granola','Tahıl',0,0,0],['Müsli','Tahıl',0,0,0],
+
+// PROTEİN
+['Tavuk göğsü (haşlama/ızgara)','Protein',1,1,0],['Tavuk but (derisiz)','Protein',1,1,0],['Hindi eti','Protein',1,1,0],
+['Izgara balık','Protein',1,1,0],['Buğulama balık','Protein',1,1,0],['Ton balığı (konserve)','Protein',1,1,0],
+['Haşlama yumurta','Protein',1,1,0],['Omlet (sade)','Protein',1,1,0],['Menemen (sade, posasız)','Protein',1,0,0],
+['Yağsız köfte','Protein',1,0,0],['Dana bonfile','Protein',1,0,0],['Kuzu pirzola','Protein',2,0,0],
+['Kırmızı et (sert/yağlı)','Protein',0,0,0],['Sucuk','Protein',0,0,0],['Pastırma','Protein',0,0,0],['Salam','Protein',0,0,0],
+['Sosis','Protein',0,0,0],['Kavurma','Protein',0,0,0],
+['Mercimek','Baklagil',0,0,0],['Nohut','Baklagil',0,0,0],['Kuru fasulye','Baklagil',0,0,0],['Barbunya','Baklagil',0,0,0],
+['Bezelye (kuru)','Baklagil',0,0,0],['Börülce','Baklagil',0,0,0],
+
+// SEBZELER
+['Haşlama patates','Sebze',1,1,0],['Patates püresi','Sebze',1,1,0],['Haşlama havuç','Sebze',1,1,0],
+['Pişmiş kabak','Sebze',1,1,0],['Pişmiş patlıcan (kabuksuz)','Sebze',1,0,0],['Domates (soyulmuş, çekirdeksiz)','Sebze',1,0,0],
+['Brokoli','Sebze',0,0,0],['Karnabahar','Sebze',0,0,0],['Lahana','Sebze',0,0,0],['Brüksel lahanası','Sebze',0,0,0],
+['Ispanak','Sebze',0,0,0],['Pazı','Sebze',0,0,0],['Mısır','Sebze',0,0,0],['Bamya','Sebze',0,0,0],
+['Enginar','Sebze',0,0,0],['Kereviz','Sebze',0,0,0],['Pancar','Sebze',0,0,0],['Turp','Sebze',0,0,0],
+['Biber (çiğ)','Sebze',0,0,0],['Salatalık (çiğ)','Sebze',0,0,0],['Yeşil salata','Sebze',0,0,0],['Roka','Sebze',0,0,0],
+['Maydanoz','Sebze',0,0,0],['Dereotu','Sebze',0,0,0],['Soğan (çiğ)','Sebze',0,0,0],['Sarımsak','Sebze',0,0,0],
+
+// MEYVELER
+['Muz','Meyve',1,1,0],['Kavun','Meyve',1,1,0],['Karpuz (çekirdeksiz)','Meyve',1,1,0],
+['Şeftali (kabuksuz)','Meyve',1,0,0],['Elma (kabuksuz, pişmiş)','Meyve',1,0,0],['Armut (kabuksuz, pişmiş)','Meyve',1,0,0],
+['Elma (çiğ, kabuklu)','Meyve',0,0,0],['Portakal','Meyve',0,0,0],['Mandalina','Meyve',0,0,0],
+['Çilek','Meyve',0,0,0],['Nar','Meyve',0,0,0],['Üzüm','Meyve',0,0,0],['Kiraz','Meyve',0,0,0],['Erik','Meyve',0,0,0],
+['Kuru kayısı','Meyve',0,0,0],['Kuru incir','Meyve',0,0,0],['Kuru üzüm','Meyve',0,0,0],['Hurma','Meyve',0,0,0],['Ceviz','Kuruyemiş',0,0,0],['Fındık','Kuruyemiş',0,0,0],['Badem','Kuruyemiş',0,0,0],['Fıstık','Kuruyemiş',0,0,0],
+
+// SÜT ÜRÜNLERİ
+['Beyaz peynir (az)','Süt Ürünü',1,1,0],['Kaşar peyniri','Süt Ürünü',1,0,0],['Lor peyniri','Süt Ürünü',1,1,0],
+['Süt (az)','Süt Ürünü',2,0,0],['Yoğurt (sade)','Süt Ürünü',2,0,0],['Ayran','Süt Ürünü',0,0,0],['Kefir','Süt Ürünü',0,0,0],
+['Dondurma','Süt Ürünü',0,0,0],['Kaymak','Süt Ürünü',0,0,0],['Krema','Süt Ürünü',0,0,0],
+
+// İÇECEKLER
+['Su','İçecek',1,1,1],['Sade çay','İçecek',1,1,1],['Bitki çayları','İçecek',1,1,1],
+['Filtre kahve (sade)','İçecek',1,1,0],['Türk kahvesi (sade)','İçecek',1,0,0],
+['Süzülmüş elma suyu','İçecek',1,1,1],['Beyaz üzüm suyu','İçecek',1,1,1],
+['Berrak limonata','İçecek',1,1,1],['Berrak gazlı içecek','İçecek',0,0,1],
+['Bal (suya/çaya)','İçecek',1,1,1],['Şeker (çaya)','İçecek',1,1,1],
+['Posalı meyve suyu','İçecek',0,0,0],['Alkol','İçecek',0,0,0],['Bira','İçecek',0,0,0],['Şarap','İçecek',0,0,0],
+['Boza','İçecek',0,0,0],['Şalgam','İçecek',0,0,0],['Smoothie','İçecek',0,0,0],
+['Sütlü kahve','İçecek',0,0,0],['Cappuccino','İçecek',0,0,0],
+
+// ÇORBALAR
+['Tavuk suyu (süzülmüş, berrak)','Çorba',1,1,1],['Et suyu (süzülmüş, berrak)','Çorba',1,1,1],
+['Şehriye çorbası (süzülmüş)','Çorba',1,1,0],['Tarhana çorbası','Çorba',2,0,0],
+['Mercimek çorbası','Çorba',0,0,0],['Ezogelin çorbası','Çorba',0,0,0],['Yayla çorbası','Çorba',0,0,0],
+['İşkembe çorbası','Çorba',0,0,0],['Domates çorbası (süzülmüş)','Çorba',1,1,0],
+
+// TÜRK MUTFAĞI ÖZEL
+['Peynirli börek (sade)','Türk Mutfağı',1,0,0],['Ispanaklı börek','Türk Mutfağı',0,0,0],['Kıymalı börek','Türk Mutfağı',0,0,0],
+['Peynirli gözleme','Türk Mutfağı',1,0,0],['Patatesli gözleme','Türk Mutfağı',1,0,0],
+['Mantı (az, sade)','Türk Mutfağı',2,0,0],['Lahmacun','Türk Mutfağı',0,0,0],['Pide (sade peynirli)','Türk Mutfağı',1,0,0],
+['Karnıyarık','Türk Mutfağı',0,0,0],['İmam bayıldı','Türk Mutfağı',0,0,0],['Türlü','Türk Mutfağı',0,0,0],
+['Dolma (yaprak sarması)','Türk Mutfağı',0,0,0],['Etli nohut','Türk Mutfağı',0,0,0],['Kuru fasulye yemeği','Türk Mutfağı',0,0,0],
+['Kebap (şiş)','Türk Mutfağı',1,0,0],['Adana kebap','Türk Mutfağı',0,0,0],['İskender','Türk Mutfağı',0,0,0],
+['Döner (tavuk)','Türk Mutfağı',1,0,0],['Çiğ köfte','Türk Mutfağı',0,0,0],['İçli köfte','Türk Mutfağı',0,0,0],
+['Midye dolma','Türk Mutfağı',0,0,0],['Kokoreç','Türk Mutfağı',0,0,0],['Tantuni','Türk Mutfağı',0,0,0],
+
+// TATLILAR & ATIŞTIRMALIK
+['Bal','Tatlı',1,1,1],['Reçel (süzülmüş)','Tatlı',1,1,0],['Pekmez (az)','Tatlı',1,0,0],
+['Jelatin tatlısı (sarı/yeşil)','Tatlı',1,1,1],['Açık renkli jelibon','Tatlı',0,0,1],
+['Sütlaç','Tatlı',2,0,0],['Muhallebi','Tatlı',2,0,0],['Kazandibi','Tatlı',2,0,0],
+['Puding (sade)','Tatlı',2,0,0],['Baklava','Tatlı',0,0,0],['Künefe','Tatlı',0,0,0],
+['Çikolata','Tatlı',0,0,0],['Lokum','Tatlı',0,0,0],['Helva','Tatlı',0,0,0],
+['Kek (sade)','Tatlı',1,0,0],['Poğaça (sade)','Tatlı',1,0,0],['Açma (sade)','Tatlı',1,0,0],
+['Komposto (süzülmüş)','Tatlı',1,1,1],['Hoşaf (süzülmüş)','Tatlı',1,1,1],
+];
+
+// Meals per day
+const MEALS={
+3:[
+  {h:'07:00',l:'Kahvaltı',items:['Beyaz ekmek','Haşlama yumurta','Beyaz peynir','Bal','Sade çay']},
+  {h:'10:00',l:'Kuşluk',items:['Galeta','Muz','Süzülmüş elma suyu']},
+  {h:'12:30',l:'Öğle',items:['Pirinç pilavı','Izgara tavuk göğsü','Haşlama havuç','Su']},
+  {h:'15:30',l:'İkindi',items:['Kraker','Beyaz peynir','Bitki çayı']},
+  {h:'19:00',l:'Akşam',items:['Makarna (sade)','Izgara balık','Patates püresi','Komposto']},
+  {h:'21:30',l:'Gece',items:['Bisküvi','Bal + çay','1 bardak su']}
+],
+2:[
+  {h:'07:00',l:'Kahvaltı',items:['Galeta + bal','Haşlama yumurta','Sade çay']},
+  {h:'10:00',l:'Kuşluk',items:['Kraker','Süzülmüş meyve suyu']},
+  {h:'12:30',l:'Öğle',items:['Berrak tavuk suyu','Az pirinç','Su']},
+  {h:'15:30',l:'İkindi',items:['Galeta','Bal + çay']},
+  {h:'19:00',l:'Akşam',items:['Haşlama patates','Berrak et suyu','Komposto']},
+  {h:'21:30',l:'Gece',items:['Jelatin tatlısı','Bol su']}
+],
+1:[
+  {h:'08:00',l:'Sabah',items:['2 bardak su','Sade çay + bal','Süzülmüş elma suyu']},
+  {h:'10:00',l:'Kuşluk',items:['Berrak tavuk suyu','Üzüm suyu']},
+  {h:'12:00',l:'Öğle',items:['Berrak et suyu','Limonata','Jelatin tatlısı']},
+  {h:'15:00',l:'İkindi',items:['Elma suyu','Bitki çayı + bal']},
+  {h:'18:00',l:'Akşam',items:['Berrak tavuk suyu','Çay + bal','Bol su']},
+  {h:'20:00',l:'Gece',items:['Hoşaf (süzülmüş)','Su — idrar berrak olmalı!']}
+],
+0:[
+  {h:'Erken',l:'2. Doz İlaç',items:['İlacınızı zamanında alın','Berrak sıvı ile destekleyin']},
+  {h:'NPO',l:'Durma Saati',items:['İşlemden 2 saat önce ağızdan HİÇBİR ŞEY','Düzenli ilaçlar az su ile alınabilir']}
+]};
+
+const DAY_INFO={
+  3:{ico:'🍽️',title:'Düşük Lifli Diyet',desc:'Sindirilmesi kolay gıdalar yiyin. Lifli, posalı, kabuklu gıdalardan uzak durun.',rule:'Günde 2.5 L sıvı hedefleyin',goal:10},
+  2:{ico:'🍲',title:'Azaltılmış Diyet',desc:'Daha da hafifleyin. Sade, kolay sindirilir gıdalara geçin.',rule:'Günde 3 L sıvı hedefleyin',goal:12},
+  1:{ico:'💧',title:'Sadece Berrak Sıvılar',desc:'Katı gıda kesinlikle yasak! Arkasındaki yazıyı okuyabildiğiniz sıvılar.',rule:'Günde 3–4 L berrak sıvı için',goal:16},
+  0:{ico:'⛔',title:'İşlem Günü',desc:'2. doz ilacınızı alın. İşlemden 2 saat önce her şeyi durdurun.',rule:'NPO — 2 saat önce HİÇBİR ŞEY',goal:0}
+};
+
+const CATS={
+  'Ekmek':{ico:'🍞',name:'Ekmek & Unlu'},'Tahıl':{ico:'🌾',name:'Tahıllar & Makarna'},'Protein':{ico:'🍗',name:'Et, Balık & Yumurta'},
+  'Baklagil':{ico:'🫘',name:'Baklagiller'},'Sebze':{ico:'🥕',name:'Sebzeler'},'Meyve':{ico:'🍎',name:'Meyveler'},
+  'Kuruyemiş':{ico:'🥜',name:'Kuruyemişler'},'Süt Ürünü':{ico:'🧀',name:'Süt Ürünleri'},'İçecek':{ico:'🥤',name:'İçecekler'},
+  'Çorba':{ico:'🍲',name:'Çorbalar'},'Türk Mutfağı':{ico:'🇹🇷',name:'Türk Mutfağı Özel'},'Tatlı':{ico:'🍯',name:'Tatlı & Atıştırmalık'}
+};
+
+// WIZARD
+$('wDate').addEventListener('change',function(){S.date=this.value;$('ws1next').disabled=!this.value});
 function wizNext(n){document.querySelectorAll('.wiz-step').forEach(s=>s.classList.remove('on'));$('ws'+n).classList.add('on')}
 function wizBack(n){wizNext(n)}
-
-$('wDate').addEventListener('change',function(){S.date=this.value;$('ws1next').disabled=!this.value});
 function pickTime(t,el){S.time=t;document.querySelectorAll('#ws2 .opt2').forEach(e=>e.classList.remove('sel'));el.classList.add('sel');$('ws2next').disabled=false}
 function pickDrug(d,el){S.drug=d;document.querySelectorAll('#ws3 .opt').forEach(e=>e.classList.remove('sel'));el.classList.add('sel');$('ws3next').disabled=false}
-
-function startApp(){S.tasks={};S.checks={};save();$('nav').classList.add('on');go('home')}
+function startApp(){S.tasks={};S.checks={};S.water={};save();$('nav').classList.add('on');go('home')}
 function resetApp(){if(confirm('Tüm veriler silinecek. Emin misiniz?')){localStorage.removeItem(K);location.reload()}}
 
-// ═══ NAV ═══
+// NAV
 function go(id){
-  document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));
-  $(id).classList.add('on');
+  document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));$(id).classList.add('on');
   document.querySelectorAll('.nb').forEach(b=>b.classList.remove('on'));
-  const map={home:0,diet:1,drug:2,stool:3,check:4};
-  document.querySelectorAll('.nb')[map[id]]?.classList.add('on');
-  if(id==='home')renderHome();
-  if(id==='diet')renderDiet();
-  if(id==='drug')renderDrug();
-  if(id==='check')renderCheck();
+  document.querySelectorAll('.nb')[[,'home','diet','drug','stool','check'].indexOf(id)]?.classList.add('on');
+  if(id==='home')renderHome();if(id==='diet')renderDiet();if(id==='drug')renderDrug();if(id==='check')renderCheck();
   window.scrollTo(0,0);
 }
 
-// ═══ DASHBOARD ═══
-function daysLeft(){
-  const p=new Date(S.date+'T00:00:00'),n=new Date(),t=new Date(n.getFullYear(),n.getMonth(),n.getDate());
-  return Math.ceil((p-t)/864e5);
-}
+// DASHBOARD
+function daysLeft(){const p=new Date(S.date+'T00:00:00'),n=new Date(),t=new Date(n.getFullYear(),n.getMonth(),n.getDate());return Math.ceil((p-t)/864e5)}
 function renderHome(){
   const dl=daysLeft();
   if(dl>0){$('hNum').textContent=dl;$('hUnit').textContent=' gün';$('hNum').style.fontSize='';}
@@ -431,178 +427,145 @@ function renderHome(){
   else{$('hNum').textContent='✓';$('hUnit').textContent='';$('hNum').style.fontSize='52px';}
   const pd=new Date(S.date+'T00:00:00');
   $('hDetail').textContent=pd.toLocaleDateString('tr-TR',{weekday:'long',day:'numeric',month:'long'})+' · '+(S.time==='morning'?'Sabah':'Öğleden Sonra');
-
-  // Phase
   let ph;
-  if(dl>3)ph={cls:'green',tag:'HAZIRLIK ÖNCESİ',title:'Normal Beslenme',desc:'Henüz diyet değişikliğine gerek yok. İlaçlarınızı ve alışverişinizi hazırlayın.'};
-  else if(dl===3)ph={cls:'orange',tag:'3 GÜN ÖNCE',title:'Düşük Lifli Diyet Başlıyor',desc:'Bugünden itibaren beyaz ekmek, pilav, tavuk, yumurta yiyin. Lifli gıdalardan kaçının.'};
-  else if(dl===2)ph={cls:'orange',tag:'2 GÜN ÖNCE',title:'Daha Hafif Beslenin',desc:'Makarna, patates püresi, berrak çorbalar. Kızartma ve ağır yemek yok.'};
-  else if(dl===1)ph={cls:'bx',tag:'1 GÜN ÖNCE',title:'Berrak Sıvı + İlaç Günü',desc:'Sadece berrak sıvılar! Katı gıda yasak. Bugün ilaç dozlarınızı alacaksınız.'};
-  else if(dl===0)ph={cls:'bx',tag:'İŞLEM GÜNÜ',title:'Kolonoskopi Günü',desc:'İşlemden 2 saat önce ağızdan hiçbir şey almayın. Refakatçi zorunlu!'};
-  else ph={cls:'green',tag:'İŞLEM SONRASI',title:'Tamamlandı',desc:'Hafif beslenmeye başlayabilirsiniz. Doktorunuzun talimatlarına uyun.'};
-  $('phaseEl').innerHTML=`<div class="phase ${ph.cls}"><div class="phase-tag">${ph.tag}</div><div class="phase-title">${ph.title}</div><div class="phase-desc">${ph.desc}</div></div>`;
-
-  // Progress
+  if(dl>3)ph={c:'green',t:'HAZIRLIK ÖNCESİ',n:'Normal Beslenme',d:'Henüz diyet değişikliğine gerek yok. İlaçlarınızı ve alışverişinizi hazırlayın.'};
+  else if(dl===3)ph={c:'orange',t:'3 GÜN ÖNCE',n:'Düşük Lifli Diyet',d:'Bugünden itibaren beyaz ekmek, pilav, tavuk, yumurta. Lifli gıdalardan kaçının.'};
+  else if(dl===2)ph={c:'orange',t:'2 GÜN ÖNCE',n:'Azaltılmış Diyet',d:'Makarna, patates püresi, berrak çorbalar. Kızartma ve ağır yemek yok.'};
+  else if(dl===1)ph={c:'bx',t:'1 GÜN ÖNCE',n:'Berrak Sıvı + İlaç',d:'Sadece berrak sıvılar! Katı gıda yasak. Bugün ilaç dozlarınızı alacaksınız.'};
+  else if(dl===0)ph={c:'bx',t:'İŞLEM GÜNÜ',n:'Kolonoskopi Günü',d:'İşlemden 2 saat önce ağızdan hiçbir şey almayın. Refakatçi zorunlu!'};
+  else ph={c:'green',t:'İŞLEM SONRASI',n:'Tamamlandı',d:'Hafif beslenmeye başlayabilirsiniz.'};
+  $('phaseEl').innerHTML=`<div class="phase ${ph.c}"><div class="phase-tag">${ph.t}</div><div class="phase-title">${ph.n}</div><div class="phase-desc">${ph.d}</div></div>`;
   const tot=4,el=Math.max(0,Math.min(tot,tot-dl)),pct=Math.round(el/tot*100);
   $('pFill').style.width=pct+'%';$('pPct').textContent=pct+'%';
-
-  // Tasks
   renderTasks(dl);
 }
 function renderTasks(dl){
-  let ts=[];
+  let ts=[];const d=S.drug,m=S.time==='morning';
   if(dl>3)ts=[{id:'shop',t:'🛒 Alışveriş yapın',d:'İlaç, berrak sıvılar, ıslak mendil, vazelin'},{id:'meds',t:'💊 İlaçları kontrol edin',d:'GLP-1, kan sulandırıcı, diyabet, demir'}];
   else if(dl===3)ts=[{id:'d3',t:'🍚 Düşük lifli diyete geçin',d:'Beyaz ekmek, pilav, tavuk, yumurta',tm:'Tüm gün'},{id:'w3',t:'💧 2.5 L sıvı için',d:'Su, çay, süzülmüş meyve suyu'}];
   else if(dl===2)ts=[{id:'d2',t:'🍜 Hafif yemeklere geçin',d:'Makarna, haşlama patates, berrak çorba',tm:'Tüm gün'},{id:'w2',t:'💧 3 L sıvı için',d:'Sıvıyı artırın'}];
-  else if(dl===1)ts=dayBeforeTasks();
-  else if(dl===0)ts=procDayTasks();
+  else if(dl===1){
+    ts=[{id:'cl',t:'🥤 Sadece berrak sıvı!',d:'Katı gıda kesinlikle yasak',tm:'Tüm gün'},{id:'w1',t:'💧 3–4 L berrak sıvı',d:'Çay, elma suyu, tavuk suyu, su'}];
+    if(d==='peg2'){ts.push({id:'d1',t:'💊 1. Doz — 1L Pegdin',d:'Her 15 dk 250 ml. Soğuk, pipet ile',tm:m?'18:00':'18:00'});ts.push({id:'e1',t:'💧 500 ml ek sıvı',d:'İlaç sonrası'});}
+    else if(d==='picoprep'){ts.push({id:'d1',t:'💊 1. Saşe Picoprep',d:'150 ml soğuk su ile',tm:m?'16:00':'17:00'});ts.push({id:'e1',t:'💧 5 bardak sıvı',d:'Saşe sonrası 5 saatte'});}
+    else if(d==='fortrans'){ts.push({id:'d1',t:'💊 1. Doz — 2L Fortrans',d:'Her 15 dk 250 ml',tm:m?'17:00':'18:00'});ts.push({id:'e1',t:'💧 1L ek sıvı',d:'İlaç sonrası'});}
+    else if(d==='phospho')ts.push({id:'d1',t:'💊 1. Doz — 45ml Fleet',d:'½ bardak su + 3 bardak sıvı',tm:'18:00'});
+  } else if(dl===0){
+    if(d==='peg2')ts.push({id:'d2x',t:'💊 2. Doz — 1L Pegdin',d:'+500ml sıvı',tm:m?'03:00':'07:00'});
+    else if(d==='picoprep')ts.push({id:'d2x',t:'💊 2. Saşe Picoprep',d:'+3 bardak sıvı',tm:m?'03:00':'06:00'});
+    else if(d==='fortrans')ts.push({id:'d2x',t:'💊 2. Doz — 2L Fortrans',d:'İşlemden 5 saat önce',tm:m?'03:00':'07:00'});
+    else if(d==='phospho')ts.push({id:'d2x',t:'💊 2. Doz — 45ml Fleet',d:'+3 bardak sıvı',tm:m?'03:00':'07:00'});
+    ts.push({id:'stp',t:'⛔ DURMA SAATİ',d:'2 saat önce HİÇBİR ŞEY!',tm:'NPO'},{id:'ref',t:'👥 Refakatçi hazır',d:'Refakatçisiz işlem yapılamaz!'},{id:'doc',t:'📄 Evraklar hazır',d:'Kimlik, sigorta, tetkikler'});
+  }
   $('tList').innerHTML=ts.map(t=>`<div class="task ${S.tasks[t.id]?'done':''}" onclick="togTask('${t.id}')"><div class="tck">${S.tasks[t.id]?'✓':''}</div><div class="t-body"><h4>${t.t}</h4><p>${t.d}</p></div>${t.tm?`<div class="t-time">${t.tm}</div>`:''}</div>`).join('');
-}
-function dayBeforeTasks(){
-  const d=S.drug,m=S.time==='morning';
-  let ts=[{id:'cl',t:'🥤 Sadece berrak sıvı!',d:'Katı gıda kesinlikle yasak',tm:'Tüm gün'},{id:'w1',t:'💧 3–4 L berrak sıvı için',d:'Çay, elma suyu, tavuk suyu, su'}];
-  if(d==='peg2'){ts.push({id:'d1',t:'💊 1. Doz — 1L Pegdin',d:'Her 15 dk 250 ml. Soğuk ve pipet ile',tm:m?'18:00':'18:00'});ts.push({id:'e1',t:'💧 500 ml ek sıvı',d:'İlaç sonrası berrak sıvı',tm:''});}
-  else if(d==='picoprep'){ts.push({id:'d1',t:'💊 1. Saşe — Picoprep',d:'150 ml soğuk su ile eritip için',tm:m?'16:00':'17:00'});ts.push({id:'e1',t:'💧 5 bardak sıvı (1.25 L)',d:'Saşe sonrası 5 saatte'});}
-  else if(d==='fortrans'){ts.push({id:'d1',t:'💊 1. Doz — 2L Fortrans',d:'Her 15 dk 250 ml. Sabırlı olun!',tm:m?'17:00':'18:00'});ts.push({id:'e1',t:'💧 1L ek sıvı',d:'İlaç sonrası'});}
-  else if(d==='phospho'){ts.push({id:'d1',t:'💊 1. Doz — 45ml Fleet',d:'½ bardak su ile + 3 bardak sıvı',tm:'18:00'});}
-  return ts;
-}
-function procDayTasks(){
-  const d=S.drug,m=S.time==='morning';
-  let ts=[];
-  if(d==='peg2')ts.push({id:'d2x',t:'💊 2. Doz — 1L Pegdin',d:'İşlemden 5 saat önce + 500 ml sıvı',tm:m?'03:00':'07:00'});
-  else if(d==='picoprep')ts.push({id:'d2x',t:'💊 2. Saşe — Picoprep',d:'150 ml su + 3 bardak sıvı',tm:m?'03:00':'06:00'});
-  else if(d==='fortrans')ts.push({id:'d2x',t:'💊 2. Doz — 2L Fortrans',d:'İşlemden 5 saat önce',tm:m?'03:00':'07:00'});
-  else if(d==='phospho')ts.push({id:'d2x',t:'💊 2. Doz — 45ml Fleet',d:'½ bardak su + 3 bardak sıvı',tm:m?'03:00':'07:00'});
-  ts.push({id:'stp',t:'⛔ DURMA SAATİ',d:'İşlemden 2 saat önce ağızdan hiçbir şey!',tm:'NPO'});
-  ts.push({id:'ref',t:'👥 Refakatçi hazır',d:'Refakatçisiz işlem yapılamaz!'});
-  ts.push({id:'doc',t:'📄 Evraklar hazır',d:'Kimlik, sigorta, tetkikler, ilaç listesi'});
-  return ts;
 }
 function togTask(id){S.tasks[id]=!S.tasks[id];save();renderHome()}
 
-// ═══ DIET ═══
-const dietDB={
-  3:{title:'3 Gün Önce',cards:[
-    {ico:'🍞',title:'Tahıllar',yes:['Beyaz ekmek, pide, yufka','Beyaz pirinç pilavı','Makarna (sade)','Bisküvi, kraker, galeta'],no:['Tam buğday, kepek','Bulgur, esmer pirinç','Yulaf, mısır, çavdar']},
-    {ico:'🍗',title:'Protein',yes:['Tavuk (derisiz)','Izgara balık','Yumurta','Yağsız köfte'],no:['Kuru baklagiller','Mercimek, nohut, fasulye','Pastırma, sucuk']},
-    {ico:'🥕',title:'Sebze & Meyve',yes:['Haşlama patates, havuç','Pişmiş kabak, patlıcan','Muz, kavun, karpuz'],no:['Çiğ sebze, salata','Brokoli, lahana, ıspanak','Kabuklu meyve, kuru meyve']},
-    {ico:'🥤',title:'İçecek',yes:['Su (bol!)','Sade çay, bitki çayları','Süzülmüş meyve suyu'],no:['Alkol','Posalı meyve suları','Süt (fazla)']}
-  ],meals:{k:['Beyaz ekmek','Yumurta','Çay'],o:['Pirinç pilavı','Izgara tavuk','Haşlama havuç'],a:['Makarna','veya Izgara balık','Patates püresi']}},
-  2:{title:'2 Gün Önce',cards:[
-    {ico:'🍲',title:'Tüketebilecekleriniz',yes:['Berrak tavuk / et suyu','Makarna (sade, az)','Haşlama patates','Yumurta','Galeta, kraker, bal'],no:['Kızartmalar','Yağlı yemekler','Salata, çiğ sebze','Baklagiller, kuruyemiş']}
-  ],meals:{k:['Galeta + bal','Haşlama yumurta','Çay'],o:['Berrak tavuk suyu','Az pirinç','Su'],a:['Haşlama patates','Berrak et suyu','Bol su']}},
-  1:{title:'1 Gün Önce — Berrak Sıvı',cards:[
-    {ico:'💧',title:'İçebilecekleriniz',yes:['Su (sınırsız!)','Sade çay, bitki çayları','Süzülmüş elma suyu','Beyaz üzüm suyu','Berrak tavuk/et suyu','Bal, şeker (çaya)','Jelatin (sarı/yeşil)','Berrak limonata'],no:['HER TÜRLÜ KATI GIDA','Süt, yoğurt, ayran','Kırmızı / mor sıvılar','Alkol','Sütlü kahve']}
-  ],meals:{k:['2 bardak su','Çay + bal','Elma suyu'],o:['Tavuk suyu','Üzüm suyu','Jelatin'],a:['Et suyu','Çay + bal','Bol su']}},
-  0:{title:'İşlem Günü',cards:[
-    {ico:'⛔',title:'NPO Kuralı',yes:['2. doz ilacınızı alın','İlaçlar arası berrak sıvı','Düzenli ilaçlar az su ile'],no:['İşlemden 2 saat önce HİÇBİR ŞEY','Katı gıda','Sakız bile çiğnemeyin']}
-  ],meals:null}
-};
+// DIET
 let curDay=3;
 function renderDiet(){
-  const dl=daysLeft();
-  curDay=[3,2,1,0].includes(dl)?dl:dl>3?3:0;
+  const dl=daysLeft();curDay=[3,2,1,0].includes(dl)?dl:dl>3?3:0;
   $('dTabs').innerHTML=[3,2,1,0].map(d=>`<div class="dtab ${d===curDay?'on':''}" onclick="showDay(${d})">${d===0?'İşlem Günü':d+' Gün Önce'}</div>`).join('');
   showDay(curDay);
 }
 function showDay(d){
-  curDay=d;
-  document.querySelectorAll('.dtab').forEach((t,i)=>t.classList.toggle('on',[3,2,1,0][i]===d));
-  const data=dietDB[d];
-  let h='';
-  data.cards.forEach(c=>{
-    h+=`<div class="fcard"><h3><span class="fico">${c.ico}</span>${c.title}</h3><div class="fitems">`;
-    c.yes.forEach(f=>h+=`<div class="fi yes"><span class="fi-mark">✓</span>${f}</div>`);
-    c.no.forEach(f=>h+=`<div class="fi no"><span class="fi-mark">✗</span>${f}</div>`);
-    h+='</div>';
-    if(data.meals)h+=`<div class="meals-row"><div class="meal-card"><h5>Kahvaltı</h5>${data.meals.k.map(m=>`<p>${m}</p>`).join('')}</div><div class="meal-card"><h5>Öğle</h5>${data.meals.o.map(m=>`<p>${m}</p>`).join('')}</div><div class="meal-card"><h5>Akşam</h5>${data.meals.a.map(m=>`<p>${m}</p>`).join('')}</div></div>`;
-    h+='</div>';
+  curDay=d;document.querySelectorAll('.dtab').forEach((t,i)=>t.classList.toggle('on',[3,2,1,0][i]===d));
+  $('searchInput').value='';$('searchRes').innerHTML='';
+  const info=DAY_INFO[d];
+
+  // Day hero
+  $('dayHero').innerHTML=`<div class="day-hero"><div class="dh-ico">${info.ico}</div><h2>${info.title}</h2><p>${info.desc}</p><div class="dh-rule">${info.rule}</div></div>`;
+
+  // Hydration
+  if(info.goal>0){
+    const wKey='w'+d;if(!S.water[wKey])S.water[wKey]=0;
+    const filled=S.water[wKey],pct=Math.min(100,Math.round(filled/info.goal*100));
+    const ml=filled*250,goalMl=info.goal*250;
+    $('hydroEl').innerHTML=`<div class="hydro"><div class="hydro-head"><h3>💧 Sıvı Takibi</h3><span>${ml} ml / ${goalMl} ml</span></div><div class="hydro-bar"><div class="hydro-fill" style="width:${pct}%"></div></div><div class="glasses">${Array.from({length:info.goal},(_, i)=>`<div class="glass ${i<filled?'full':''}" onclick="tapGlass(${d},${i})">${i<filled?'💧':'💨'}</div>`).join('')}</div></div>`;
+  } else $('hydroEl').innerHTML='';
+
+  // Meals
+  const meals=MEALS[d];
+  $('mealTL').innerHTML=`<div class="meal-tl"><div class="meal-tl-head">🍽️ Öğün Planı</div>${meals.map(m=>`<div class="meal-card"><div class="mc-time"><div class="mt-hour">${m.h}</div><div class="mt-label">${m.l}</div></div><div class="mc-body"><div class="mc-items">${m.items.map(i=>`<span class="mc-chip">✓ ${i}</span>`).join('')}</div></div></div>`).join('')}</div>`;
+
+  // Category accordions
+  const dayIdx=d===3?2:d===2?3:d===1?4:4;
+  const catOrder=['Ekmek','Tahıl','Protein','Baklagil','Sebze','Meyve','Kuruyemiş','Süt Ürünü','İçecek','Çorba','Türk Mutfağı','Tatlı'];
+  let accHtml='<div class="cat-section"><div class="cs-head">📋 Tüm Gıdalar — Detaylı Liste</div>';
+  catOrder.forEach(cat=>{
+    const items=FOODS.filter(f=>f[1]===cat);if(!items.length)return;
+    const ci=CATS[cat];
+    const yesItems=items.filter(f=>f[dayIdx]===1);
+    const noItems=items.filter(f=>f[dayIdx]===0);
+    const maybeItems=items.filter(f=>f[dayIdx]===2);
+    accHtml+=`<div class="acc" onclick="this.classList.toggle('open')"><div class="acc-head"><span class="ah-ico">${ci.ico}</span><h4>${ci.name} <span style="color:var(--green);font-size:12px">${yesItems.length}✓</span> <span style="color:var(--red);font-size:12px">${noItems.length}✗</span></h4><span class="ah-arrow">▼</span></div><div class="acc-body"><div class="acc-inner">`;
+    yesItems.forEach(f=>accHtml+=`<div class="fi yes"><span class="fi-m">✓</span>${f[0]}</div>`);
+    maybeItems.forEach(f=>accHtml+=`<div class="fi maybe"><span class="fi-m">⚠</span>${f[0]} (az miktarda)</div>`);
+    noItems.forEach(f=>accHtml+=`<div class="fi no"><span class="fi-m">✗</span>${f[0]}</div>`);
+    accHtml+=`</div></div></div>`;
   });
-  $('dContent').innerHTML=h;
+  accHtml+='</div>';
+  $('catAccs').innerHTML=accHtml;
 }
 
-// ═══ DRUG ═══
+function tapGlass(d,i){
+  const wKey='w'+d;
+  if(!S.water[wKey])S.water[wKey]=0;
+  S.water[wKey]=S.water[wKey]===i+1?i:i+1;
+  save();showDay(d);
+}
+
+// SEARCH
+function doSearch(q){
+  q=q.trim().toLowerCase();
+  if(q.length<2){$('searchRes').innerHTML='';return;}
+  const dayIdx=curDay===3?2:curDay===2?3:curDay===1?4:4;
+  const results=FOODS.filter(f=>f[0].toLowerCase().includes(q)).slice(0,10);
+  if(!results.length){$('searchRes').innerHTML=`<div class="sr-empty">Sonuç bulunamadı. Daha farklı bir kelime deneyin.</div>`;return;}
+  $('searchRes').innerHTML=results.map(f=>{
+    const v=f[dayIdx];const cls=v===1?'yes':v===2?'maybe':'no';const txt=v===1?'YENİLİR ✓':v===2?'DİKKAT ⚠':'YASAK ✗';
+    return `<div class="sr-item"><div><div class="sr-name">${f[0]}</div><div class="sr-cat">${f[1]}</div></div><div class="sr-badge ${cls}">${txt}</div></div>`;
+  }).join('');
+}
+
+// DRUG
 const drugNames={peg2:{n:'Pegdin',g:'PEG 2L + Askorbik Asit',ico:'🟦'},picoprep:{n:'Picoprep',g:'Pikosülfat + Mg Sitrat · 2 Saşe',ico:'🟧'},fortrans:{n:'Fortrans',g:'PEG 4L · Makrogol 4000',ico:'🟪'},phospho:{n:'Fleet Fosfo-Soda',g:'Sodyum Fosfat · 2 × 45 ml',ico:'🟩'}};
+function tlI(c,n,t,ti,d,tip){return `<div class="tl-item"><div class="tl-dot ${c}">${n}</div><div class="tl-card"><div class="tl-time">${t}</div><div class="tl-title">${ti}</div><div class="tl-desc">${d}</div>${tip?`<div class="tl-tip">${tip}</div>`:''}</div></div>`}
 function renderDrug(){
   const d=S.drug,m=S.time==='morning',info=drugNames[d];
-  let h=`<div class="drug-head"><div class="dh-ico">${info.ico}</div><div><h3>${info.n}</h3><p>${info.g}</p></div></div>`;
-
-  h+=`<div class="timeline">`;
-  if(d==='peg2'){
-    h+=tlItem('bx','1',m?'Önceki gün 18:00':'Önceki gün 18:00','1. Doz — 1 Litre Pegdin','Her 10–15 dakikada 250 ml için. 1–2 saatte bitirin. Sonra 500 ml berrak sıvı.','Buzdolabında soğutun. Pipet ile için. Naneli şeker koklatın.');
-    h+=tlItem('bx','2',m?'İşlem günü 03:00':'İşlem günü 07:00','2. Doz — 1 Litre Pegdin','Aynı şekilde 1–2 saatte bitirin. Sonra 500 ml berrak sıvı.',m?'⏰ Alarm kurmayı unutmayın! Erken kalkmanız gerekecek.':'Rahat bir sabah. Ama gecikmeyin!');
-  } else if(d==='picoprep'){
-    h+=tlItem('bx','1',m?'Önceki gün 16:00':'Önceki gün 17:00','1. Saşe Picoprep','150 ml soğuk su ile eritip için. Ardından 5 saatte en az 5 bardak (1.25 L) berrak sıvı.','Turuncu aroması kolay içilir. Soğutabilirsiniz.');
-    h+=tlItem('bx','2',m?'İşlem günü 03:00':'İşlem günü 06:00','2. Saşe Picoprep','150 ml su ile için. En az 3 bardak (750 ml) berrak sıvı.',m?'⏰ Alarm kurun!':'Sabah sakin tempoda.');
-  } else if(d==='fortrans'){
-    h+=tlItem('bx','1',m?'Önceki gün 17:00':'Önceki gün 18:00','1. Doz — 2 Litre Fortrans','Her 15 dakikada 250 ml. 2 saatte bitirin. Sonra 1L berrak sıvı.','Hacim fazla — sabırlı olun. Limon suyu ekleyebilirsiniz.');
-    h+=tlItem('bx','2',m?'İşlem günü 03:00':'İşlem günü 07:00','2. Doz — 2 Litre Fortrans','Aynı şekilde 2 saatte bitirin. Sonra 500 ml sıvı.',m?'⏰ Gece/sabah erken kalkış gerekli!':'Sabah sakin tempoda.');
-  } else if(d==='phospho'){
-    h+=tlItem('bx','1','Önceki gün 18:00','1. Doz — 45 ml Fleet Fosfo-Soda','Yarım bardak soğuk su ile için. En az 3 bardak berrak sıvı takip edin.','Tuzlu tadı keskin — limonata ile deneyin.');
-    h+=tlItem('bx','2',m?'İşlem günü 03:00':'İşlem günü 07:00','2. Doz — 45 ml Fleet Fosfo-Soda','Yarım bardak su ile için. En az 3 bardak berrak sıvı.',m?'⏰ Erken alarm!':'Sabah sakin.');
-  }
-  h+=tlItem('red','⛔','İşlemden 2 saat önce','DURMA SAATİ','Ağızdan hiçbir şey almayın. Su dahil. Düzenli ilaçları az su ile alabilirsiniz.','');
-  h+=`</div>`;
-
-  h+=`<div class="stop-bar">⛔ İŞLEMDEN 2 SAAT ÖNCE<br>AĞIZDAN HİÇBİR ŞEY<small>Su dahil — düzenli ilaçlar az su ile alınabilir</small></div>`;
-
-  h+=`<div class="info-card"><h4>Adjuvan — Bisacodyl (Dulcolax)</h4><p>Doktorunuz önerirse, 1. dozdan <strong>1 saat önce 10 mg bisacodyl tablet</strong> alınabilir. Kabızlık eğilimi olanlarda temizliği artırır.</p></div>`;
-  h+=`<div class="info-card"><h4>Kurtarma — Lavman</h4><p>Dışkı hâlâ berrak değilse doktorunuz lavman önerebilir. <strong>Kendi kararınızla uygulamayın.</strong></p></div>`;
-
-  h+=`<div style="margin-top:20px"><div class="tasks-head">💡 Konfor İpuçları</div></div>`;
-  h+=`<div class="tips-grid">
-    <div class="tip-card"><div class="tc-ico">🧊</div><p>İlacı buzdolabında soğutun</p></div>
-    <div class="tip-card"><div class="tc-ico">🥤</div><p>Pipet ile için — tadı atlatır</p></div>
-    <div class="tip-card"><div class="tc-ico">🍬</div><p>Naneli şeker veya limon koklatın</p></div>
-    <div class="tip-card"><div class="tc-ico">🚶</div><p>Hafif yürüyüş yapın</p></div>
-    <div class="tip-card"><div class="tc-ico">🧴</div><p>Önceden vazelin sürün</p></div>
-    <div class="tip-card"><div class="tc-ico">🧻</div><p>Islak mendil kullanın</p></div>
-    <div class="tip-card"><div class="tc-ico">👖</div><p>Lastikli pantolon giyin</p></div>
-    <div class="tip-card"><div class="tc-ico">📱</div><p>Telefon + şarj kablosu</p></div>
-  </div>`;
-
+  let h=`<div class="drug-head"><div class="dh-ico">${info.ico}</div><div><h3>${info.n}</h3><p>${info.g}</p></div></div><div class="timeline">`;
+  if(d==='peg2'){h+=tlI('bx','1',m?'Önceki gün 18:00':'Önceki gün 18:00','1. Doz — 1L Pegdin','Her 10–15 dk 250 ml. 1–2 saatte. +500 ml sıvı.','Buzdolabında soğutun. Pipet ile için.');h+=tlI('bx','2',m?'İşlem günü 03:00':'İşlem günü 07:00','2. Doz — 1L Pegdin','Aynı şekilde. +500 ml sıvı.',m?'⏰ Alarm kurun!':'Rahat sabah.');}
+  else if(d==='picoprep'){h+=tlI('bx','1',m?'Önceki gün 16:00':'Önceki gün 17:00','1. Saşe Picoprep','150 ml soğuk su ile. +5 bardak sıvı.','Turuncu aroma — kolay.');h+=tlI('bx','2',m?'İşlem günü 03:00':'İşlem günü 06:00','2. Saşe Picoprep','150 ml su + 3 bardak sıvı.',m?'⏰ Alarm!':'Sabah sakin.');}
+  else if(d==='fortrans'){h+=tlI('bx','1',m?'Önceki gün 17:00':'Önceki gün 18:00','1. Doz — 2L Fortrans','Her 15 dk 250 ml. 2 saatte. +1L sıvı.','Limon suyu ekleyebilirsiniz.');h+=tlI('bx','2',m?'İşlem günü 03:00':'İşlem günü 07:00','2. Doz — 2L Fortrans','Aynı şekilde 2 saatte. +500 ml.',m?'⏰ Erken kalkış!':'Sabah sakin.');}
+  else{h+=tlI('bx','1','Önceki gün 18:00','1. Doz — 45ml Fleet','½ bardak su + 3 bardak sıvı.','Tuzlu — limonata ile deneyin.');h+=tlI('bx','2',m?'İşlem günü 03:00':'İşlem günü 07:00','2. Doz — 45ml Fleet','½ bardak su + 3 bardak sıvı.',m?'⏰ Erken alarm!':'Sabah sakin.');}
+  h+=tlI('red','⛔','2 saat önce','DURMA SAATİ','Ağızdan hiçbir şey. Su dahil. İlaçlar az su ile.','');
+  h+=`</div><div class="stop-bar">⛔ İŞLEMDEN 2 SAAT ÖNCE<br>AĞIZDAN HİÇBİR ŞEY<small>Su dahil — düzenli ilaçlar az su ile alınabilir</small></div>`;
+  h+=`<div class="info-card"><h4>Adjuvan — Bisacodyl</h4><p>Doktorunuz önerirse 1. dozdan <strong>1 saat önce 10 mg bisacodyl</strong> alınabilir.</p></div>`;
+  h+=`<div class="info-card"><h4>Kurtarma — Lavman</h4><p>Dışkı berrak değilse doktorunuz lavman önerebilir. <strong>Kendi kararınızla uygulamayın.</strong></p></div>`;
+  h+=`<div style="margin-top:20px"><div class="tasks-head">💡 Konfor İpuçları</div></div><div class="tips-grid"><div class="tip-card"><div class="tc-ico">🧊</div><p>Soğutun</p></div><div class="tip-card"><div class="tc-ico">🥤</div><p>Pipet kullanın</p></div><div class="tip-card"><div class="tc-ico">🍬</div><p>Nane / limon</p></div><div class="tip-card"><div class="tc-ico">🚶</div><p>Yürüyüş yapın</p></div><div class="tip-card"><div class="tc-ico">🧴</div><p>Vazelin sürün</p></div><div class="tip-card"><div class="tc-ico">🧻</div><p>Islak mendil</p></div><div class="tip-card"><div class="tc-ico">👖</div><p>Rahat pantolon</p></div><div class="tip-card"><div class="tc-ico">📱</div><p>Şarj + telefon</p></div></div>`;
   $('drugEl').innerHTML=h;
 }
-function tlItem(color,num,time,title,desc,tip){
-  return `<div class="tl-item"><div class="tl-dot ${color}">${num}</div><div class="tl-card"><div class="tl-time">${time}</div><div class="tl-title">${title}</div><div class="tl-desc">${desc}</div>${tip?`<div class="tl-tip">${tip}</div>`:''}</div></div>`;
-}
 
-// ═══ STOOL ═══
+// STOOL
 function pickStool(n){
-  S.stool=n;save();
-  document.querySelectorAll('.si').forEach((el,i)=>el.classList.toggle('sel',i+1===n));
-  const msgs={
-    1:{e:'⏳',m:'Henüz başlangıçta',d:'İlaç henüz tam etki etmemiş. Berrak sıvı tüketmeye devam edin ve ilacın tamamını bitirin.'},
-    2:{e:'📈',m:'İlerliyorsunuz',d:'İlaç çalışıyor. Bol sıvı tüketmeye devam edin. Yürüyüş yapın.'},
-    3:{e:'👍',m:'İyi gidiyorsunuz!',d:'Temizlik ilerliyor. Sıvıya devam. 2. dozu zamanında alın.'},
-    4:{e:'🎯',m:'Neredeyse tamam!',d:'Harika! Berrak sarımsı görünüm iyi temizlik demek. Devam edin.'},
-    5:{e:'🏆',m:'Mükemmel!',d:'Tam hedef! Berrak ve renksiz — kolonoskopi için ideal. Artık durma saatini bekleyin.'}
-  };
-  const msg=msgs[n];
-  $('sFb').innerHTML=`<div class="sfb-emoji">${msg.e}</div><div class="sfb-msg">${msg.m}</div><div class="sfb-detail">${msg.d}</div>`;
-  $('sFb').classList.add('on');
+  S.stool=n;save();document.querySelectorAll('.si').forEach((el,i)=>el.classList.toggle('sel',i+1===n));
+  const msgs={1:{e:'⏳',m:'Henüz başlangıçta',d:'İlaç henüz etki etmemiş. Berrak sıvı tüketmeye devam edin.'},2:{e:'📈',m:'İlerliyorsunuz',d:'İlaç çalışıyor. Bol sıvı, yürüyüş yapın.'},3:{e:'👍',m:'İyi gidiyorsunuz!',d:'Temizlik ilerliyor. 2. dozu zamanında alın.'},4:{e:'🎯',m:'Neredeyse tamam!',d:'Harika! Berrak sarımsı = iyi temizlik.'},5:{e:'🏆',m:'Mükemmel!',d:'Tam hedef! Berrak ve renksiz — ideal.'}};
+  const msg=msgs[n];$('sFb').innerHTML=`<div class="sfb-emoji">${msg.e}</div><div class="sfb-msg">${msg.m}</div><div class="sfb-detail">${msg.d}</div>`;$('sFb').classList.add('on');
 }
 
-// ═══ CHECKLIST ═══
-const clItems=['Hazırlık ilacımı temin ettim','İlaç kesme/doz ayarı için doktora danıştım','3 gün önce düşük lifli diyete geçtim','2 gün önce daha da hafiflettim','1 gün önce berrak sıvı diyetine geçtim','1. doz ilacı zamanında aldım','Yeterli berrak sıvı tükettim (3+ L)','2. doz ilacı zamanında aldım','Dışkım berrak sıvı haline geldi','İşlemden 2 saat önce durdum','Kimlik ve sigorta kartım hazır','Tetkik sonuçlarım hazır','İlaç listem hazır','Rahat kıyafet giydim','Refakatçim hazır'];
+// CHECKLIST
+const clItems=['Hazırlık ilacımı temin ettim','İlaç/doz ayarı için doktora danıştım','3 gün önce düşük lifli diyete geçtim','2 gün önce hafiflettim','1 gün önce berrak sıvıya geçtim','1. doz ilacı zamanında aldım','Yeterli sıvı tükettim (3+ L)','2. doz ilacı zamanında aldım','Dışkım berrak sıvı oldu','İşlemden 2 saat önce durdum','Kimlik + sigorta kartı hazır','Tetkikler hazır','İlaç listem hazır','Rahat kıyafet giydim','Refakatçim hazır'];
 function renderCheck(){
   $('clItems').innerHTML=clItems.map((t,i)=>`<div class="cli ${S.checks[i]?'chk':''}" onclick="togCl(${i})"><div class="cl-box">${S.checks[i]?'✓':''}</div><div class="cl-txt">${t}</div></div>`).join('');
-  const done=Object.values(S.checks).filter(Boolean).length;
-  const pct=Math.round(done/clItems.length*100);
-  $('clRing').setAttribute('data-pct',pct+'%');
-  $('clRing').style.background=`conic-gradient(var(--green) ${pct*3.6}deg, var(--border) 0deg)`;
+  const done=Object.values(S.checks).filter(Boolean).length,pct=Math.round(done/clItems.length*100);
+  $('clRing').setAttribute('data-pct',pct+'%');$('clRing').style.background=`conic-gradient(var(--green) ${pct*3.6}deg, var(--border) 0deg)`;
   $('clLabel').textContent=`${done} / ${clItems.length} tamamlandı`;
 }
 function togCl(i){S.checks[i]=!S.checks[i];save();renderCheck()}
 
-// ═══ INIT ═══
-load();
-if(S.date&&S.drug){$('nav').classList.add('on');go('home')}
-
-// Set min date
-const td=new Date();
-$('wDate').min=td.getFullYear()+'-'+String(td.getMonth()+1).padStart(2,'0')+'-'+String(td.getDate()).padStart(2,'0');
+// INIT
+load();if(S.date&&S.drug){$('nav').classList.add('on');go('home')}
+const td=new Date();$('wDate').min=td.getFullYear()+'-'+String(td.getMonth()+1).padStart(2,'0')+'-'+String(td.getDate()).padStart(2,'0');
 </script>
 </body>
 </html>

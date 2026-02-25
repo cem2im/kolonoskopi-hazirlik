@@ -203,12 +203,70 @@ body{font-family:var(--sans);color:var(--body);background:var(--light);line-heig
 .med p{font-size:14px;color:var(--muted);line-height:1.5}
 .foot{text-align:center;padding:32px 16px 16px;font-size:12px;color:var(--muted)}.foot strong{color:var(--dark)}
 .reset-wrap{text-align:center;margin:24px 0}.reset-btn{background:none;border:1.5px solid var(--border);border-radius:10px;padding:10px 20px;font-size:13px;color:var(--muted);cursor:pointer;font-family:var(--sans)}
+
+/* LOGIN */
+.login{min-height:100dvh;display:flex;flex-direction:column;justify-content:center;padding:32px 24px;text-align:center}
+.login-brand{font-size:12px;text-transform:uppercase;letter-spacing:3px;color:var(--bx);font-weight:700;margin-bottom:8px}
+.login h1{font-size:28px;font-weight:700;color:var(--dark);margin-bottom:4px}
+.login .login-sub{font-size:15px;color:var(--muted);margin-bottom:32px}
+.login-card{background:var(--card);border-radius:var(--r);padding:24px;box-shadow:var(--sh);max-width:360px;margin:0 auto;text-align:left}
+.login-card h3{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:16px;text-align:center}
+.tc-input{width:100%;padding:18px 20px;border:2px solid var(--border);border-radius:14px;font-size:22px;font-family:var(--sans);color:var(--dark);background:var(--card);text-align:center;letter-spacing:3px;appearance:none;-webkit-appearance:none}
+.tc-input:focus{outline:none;border-color:var(--bx)}
+.tc-input.error{border-color:var(--red);animation:shake .4s ease}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.tc-error{color:var(--red);font-size:13px;text-align:center;margin-top:8px;min-height:20px}
+.tc-hint{font-size:12px;color:var(--muted);text-align:center;margin-top:8px}
+.name-input{width:100%;padding:14px 16px;border:2px solid var(--border);border-radius:12px;font-size:16px;font-family:var(--sans);color:var(--dark);background:var(--card);margin-top:12px}
+.name-input:focus{outline:none;border-color:var(--bx)}
+.name-input::placeholder{color:var(--muted)}
+
+.welcome-back{max-width:360px;margin:24px auto 0;background:var(--green-l);border-radius:14px;padding:20px;text-align:center;display:none}
+.welcome-back.on{display:block;animation:up .3s ease}
+.welcome-back .wb-emoji{font-size:40px;margin-bottom:8px}
+.welcome-back h3{font-size:18px;font-weight:700;color:var(--dark)}
+.welcome-back p{font-size:14px;color:var(--muted);margin-top:4px}
+.welcome-back .wb-info{margin-top:10px;font-size:13px;color:var(--green);font-weight:600}
+
+.privacy-note{max-width:360px;margin:16px auto 0;font-size:11px;color:var(--muted);text-align:center;line-height:1.5}
+.privacy-note a{color:var(--bx)}
+
+/* User badge on header */
+.user-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);font-weight:500}
+.user-badge .ub-dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
+.logout-btn{background:none;border:none;color:var(--muted);font-size:12px;cursor:pointer;padding:4px 8px;font-family:var(--sans)}
 </style>
 </head>
 <body>
 
+<!-- LOGIN -->
+<div id="login" class="scr on">
+  <div class="login">
+    <div class="login-brand">Doç. Dr. Cem Şimşek</div>
+    <h1>Kolonoskopim</h1>
+    <p class="login-sub">Hazırlık Rehberinize Giriş Yapın</p>
+    <div class="login-card">
+      <h3>🔐 TC Kimlik Numaranız</h3>
+      <input type="tel" class="tc-input" id="tcInput" maxlength="11" placeholder="_ _ _ _ _ _ _ _ _ _ _" oninput="onTcInput(this)">
+      <div class="tc-error" id="tcError"></div>
+      <input type="text" class="name-input" id="nameInput" placeholder="Adınız (isteğe bağlı)">
+      <div class="tc-hint">TC Kimlik numaranız sadece bu cihazda saklanır.</div>
+      <button class="btn btn-primary" style="margin-top:16px" id="loginBtn" disabled onclick="doLogin()">Giriş Yap</button>
+    </div>
+    <div class="welcome-back" id="welcomeBack">
+      <div class="wb-emoji">👋</div>
+      <h3 id="wbName">Tekrar hoş geldiniz!</h3>
+      <p>Kaldığınız yerden devam edebilirsiniz.</p>
+      <div class="wb-info" id="wbInfo"></div>
+      <button class="btn btn-primary" style="margin-top:12px" onclick="continueSession()">Devam Et</button>
+      <button class="btn btn-ghost" onclick="newSession()">Yeni hazırlık başlat</button>
+    </div>
+    <p class="privacy-note">🔒 Verileriniz yalnızca bu cihazda saklanır, hiçbir sunucuya gönderilmez. <br>KVKK uyumlu — kişisel verileriniz güvendedir.</p>
+  </div>
+</div>
+
 <!-- WIZARD -->
-<div id="wizard" class="scr on"><div class="wiz">
+<div id="wizard" class="scr"><div class="wiz">
   <div class="wiz-step on" id="ws1"><div class="wiz-emoji">📅</div><h2>İşleminiz ne zaman?</h2><p class="wiz-sub">Kolonoskopi tarihinizi seçin</p><input type="date" class="wiz-input" id="wDate"><button class="btn btn-primary" style="margin-top:20px" id="ws1next" disabled onclick="wizNext(2)">Devam →</button></div>
   <div class="wiz-step" id="ws2"><div class="wiz-emoji">🕐</div><h2>Sabah mı, öğleden sonra mı?</h2><p class="wiz-sub">İşlem saatinizi seçin</p><div class="opts2"><div class="opt2" onclick="pickTime('morning',this)"><div class="o2-ico">🌅</div><h3>Sabah</h3><p>08:00 – 12:00</p></div><div class="opt2" onclick="pickTime('afternoon',this)"><div class="o2-ico">🌇</div><h3>Öğleden Sonra</h3><p>13:00 ve sonrası</p></div></div><button class="btn btn-primary" id="ws2next" disabled onclick="wizNext(3)">Devam →</button><button class="btn btn-ghost" onclick="wizBack(1)">← Geri</button></div>
   <div class="wiz-step" id="ws3"><div class="wiz-emoji">💊</div><h2>Hangi ilacı kullanacaksınız?</h2><p class="wiz-sub">Doktorunuzun reçete ettiği ilacı seçin</p><div class="opts"><div class="opt" onclick="pickDrug('peg2',this)"><div class="opt-ico">🟦</div><div class="opt-body"><h3>Pegdin</h3><p>PEG 2 Litre — En yaygın</p></div></div><div class="opt" onclick="pickDrug('picoprep',this)"><div class="opt-ico">🟧</div><div class="opt-body"><h3>Picoprep</h3><p>2 Saşe — Kolay içilir</p></div></div><div class="opt" onclick="pickDrug('fortrans',this)"><div class="opt-ico">🟪</div><div class="opt-body"><h3>Fortrans</h3><p>PEG 4 Litre — Klasik</p></div></div><div class="opt" onclick="pickDrug('phospho',this)"><div class="opt-ico">🟩</div><div class="opt-body"><h3>Fleet Fosfo-Soda</h3><p>2 × 45 ml — Düşük hacim</p></div></div></div><button class="btn btn-primary" id="ws3next" disabled onclick="wizNext(4)">Devam →</button><button class="btn btn-ghost" onclick="wizBack(2)">← Geri</button></div>
@@ -217,6 +275,10 @@ body{font-family:var(--sans);color:var(--body);background:var(--light);line-heig
 
 <!-- DASHBOARD -->
 <div id="home" class="scr"><div class="box">
+  <div id="userBar" style="display:flex;justify-content:space-between;align-items:center;padding:16px 0 0">
+    <div class="user-badge"><span class="ub-dot"></span><span id="userName"></span></div>
+    <button class="logout-btn" onclick="logout()">Çıkış</button>
+  </div>
   <div class="hero"><div class="hero-label">İşleme Kalan</div><div><span class="hero-big" id="hNum">3</span><span class="hero-unit" id="hUnit">gün</span></div><div class="hero-detail" id="hDetail"></div></div>
   <div id="phaseEl"></div>
   <div class="prog"><div class="prog-bar"><div class="prog-fill" id="pFill"></div></div><div class="prog-labels"><span>Başlangıç</span><span id="pPct"></span><span>İşlem</span></div></div>
@@ -274,9 +336,53 @@ body{font-family:var(--sans);color:var(--body);background:var(--light);line-heig
 </div></nav>
 
 <script>
-let S={date:null,time:null,drug:null,tasks:{},checks:{},stool:null,water:{}};
-const K='kprep3',save=()=>localStorage.setItem(K,JSON.stringify(S)),load=()=>{try{const s=localStorage.getItem(K);if(s)S=JSON.parse(s)}catch(e){}};
+let S={date:null,time:null,drug:null,tasks:{},checks:{},stool:null,water:{},name:''};
+let userKey=null;
 const $=id=>document.getElementById(id);
+
+// TC hash (stays on device only)
+async function hashTC(tc){
+  const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode('kprep_'+tc));
+  return 'kp_'+Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('').slice(0,16);
+}
+function save(){if(userKey)localStorage.setItem(userKey,JSON.stringify(S))}
+function load(){try{const s=localStorage.getItem(userKey);if(s)S=JSON.parse(s)}catch(e){}}
+
+// TC validation (resmi algoritma)
+function validateTC(tc){
+  if(tc.length!==11||tc[0]==='0'||!/^\d{11}$/.test(tc))return false;
+  const d=tc.split('').map(Number);
+  const c10=((d[0]+d[2]+d[4]+d[6]+d[8])*7-(d[1]+d[3]+d[5]+d[7]))%10;
+  if(d[9]!==((c10%10+10)%10))return false;
+  return d[10]===(d.slice(0,10).reduce((a,b)=>a+b,0)%10);
+}
+function onTcInput(el){
+  el.value=el.value.replace(/\D/g,'').slice(0,11);
+  el.classList.remove('error');$('tcError').textContent='';
+  $('loginBtn').disabled=el.value.length!==11;
+}
+async function doLogin(){
+  const tc=$('tcInput').value;
+  if(!validateTC(tc)){$('tcInput').classList.add('error');$('tcError').textContent='Geçersiz TC Kimlik numarası';return;}
+  userKey=await hashTC(tc);
+  localStorage.setItem('kp_last',userKey);
+  const existing=localStorage.getItem(userKey);
+  if(existing){
+    try{S=JSON.parse(existing)}catch(e){}
+    if(S.date){
+      $('wbName').textContent=S.name?'Hoş geldiniz, '+S.name+'!':'Tekrar hoş geldiniz!';
+      const pd=new Date(S.date+'T00:00:00');
+      $('wbInfo').textContent='İşlem: '+pd.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'});
+      $('welcomeBack').classList.add('on');$('loginBtn').style.display='none';
+      $('tcInput').closest('.login-card').style.display='none';return;
+    }
+  }
+  S.name=$('nameInput').value.trim();save();goWizard();
+}
+function continueSession(){$('nav').classList.add('on');document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));go('home')}
+function newSession(){S={date:null,time:null,drug:null,tasks:{},checks:{},stool:null,water:{},name:S.name||''};save();goWizard()}
+function goWizard(){document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));$('wizard').classList.add('on')}
+function logout(){userKey=null;localStorage.removeItem('kp_last');location.reload()}
 
 // ═══ FOOD DATABASE ═══
 // Format: [name, category, day3, day2, day1] where 1=yes, 0=no, 2=maybe/caution
@@ -407,7 +513,7 @@ function wizBack(n){wizNext(n)}
 function pickTime(t,el){S.time=t;document.querySelectorAll('#ws2 .opt2').forEach(e=>e.classList.remove('sel'));el.classList.add('sel');$('ws2next').disabled=false}
 function pickDrug(d,el){S.drug=d;document.querySelectorAll('#ws3 .opt').forEach(e=>e.classList.remove('sel'));el.classList.add('sel');$('ws3next').disabled=false}
 function startApp(){S.tasks={};S.checks={};S.water={};save();$('nav').classList.add('on');go('home')}
-function resetApp(){if(confirm('Tüm veriler silinecek. Emin misiniz?')){localStorage.removeItem(K);location.reload()}}
+function resetApp(){if(confirm('Hazırlık verileriniz silinecek. Emin misiniz?')){S={date:null,time:null,drug:null,tasks:{},checks:{},stool:null,water:{},name:S.name||''};save();goWizard();$('nav').classList.remove('on')}}
 
 // NAV
 function go(id){
@@ -421,6 +527,7 @@ function go(id){
 // DASHBOARD
 function daysLeft(){const p=new Date(S.date+'T00:00:00'),n=new Date(),t=new Date(n.getFullYear(),n.getMonth(),n.getDate());return Math.ceil((p-t)/864e5)}
 function renderHome(){
+  $('userName').textContent=S.name||'Hasta';
   const dl=daysLeft();
   if(dl>0){$('hNum').textContent=dl;$('hUnit').textContent=' gün';$('hNum').style.fontSize='';}
   else if(dl===0){$('hNum').textContent='Bugün!';$('hUnit').textContent='';$('hNum').style.fontSize='42px';}
@@ -563,8 +670,18 @@ function renderCheck(){
 }
 function togCl(i){S.checks[i]=!S.checks[i];save();renderCheck()}
 
-// INIT
-load();if(S.date&&S.drug){$('nav').classList.add('on');go('home')}
+// INIT — check if returning user with saved session
+(async()=>{
+  const lastKey=localStorage.getItem('kp_last');
+  if(lastKey){
+    userKey=lastKey;load();
+    if(S.date&&S.drug){
+      // Auto-login returning user
+      document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));
+      $('nav').classList.add('on');go('home');
+    }
+  }
+})();
 const td=new Date();$('wDate').min=td.getFullYear()+'-'+String(td.getMonth()+1).padStart(2,'0')+'-'+String(td.getDate()).padStart(2,'0');
 </script>
 </body>

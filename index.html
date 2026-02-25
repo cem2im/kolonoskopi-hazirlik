@@ -340,10 +340,15 @@ let S={date:null,time:null,drug:null,tasks:{},checks:{},stool:null,water:{},name
 let userKey=null;
 const $=id=>document.getElementById(id);
 
-// TC hash (stays on device only)
-async function hashTC(tc){
-  const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode('kprep_'+tc));
-  return 'kp_'+Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('').slice(0,16);
+// TC hash (works on HTTP + HTTPS, stays on device only)
+function hashTC(tc){
+  let h=0x811c9dc5;
+  const s='kprep_'+tc;
+  for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,0x01000193)}
+  const h2=h>>>0;
+  let h3=0x84222325;
+  for(let i=s.length-1;i>=0;i--){h3^=s.charCodeAt(i);h3=Math.imul(h3,0x01000193)}
+  return 'kp_'+h2.toString(16).padStart(8,'0')+(h3>>>0).toString(16).padStart(8,'0');
 }
 function save(){if(userKey)localStorage.setItem(userKey,JSON.stringify(S))}
 function load(){try{const s=localStorage.getItem(userKey);if(s)S=JSON.parse(s)}catch(e){}}
@@ -361,10 +366,10 @@ function onTcInput(el){
   el.classList.remove('error');$('tcError').textContent='';
   $('loginBtn').disabled=el.value.length!==11;
 }
-async function doLogin(){
+function doLogin(){
   const tc=$('tcInput').value;
   if(!validateTC(tc)){$('tcInput').classList.add('error');$('tcError').textContent='Geçersiz TC Kimlik numarası';return;}
-  userKey=await hashTC(tc);
+  userKey=hashTC(tc);
   localStorage.setItem('kp_last',userKey);
   const existing=localStorage.getItem(userKey);
   if(existing){

@@ -353,23 +353,15 @@ function hashTC(tc){
 function save(){if(userKey)localStorage.setItem(userKey,JSON.stringify(S))}
 function load(){try{const s=localStorage.getItem(userKey);if(s)S=JSON.parse(s)}catch(e){}}
 
-// TC validation (resmi algoritma)
-function validateTC(tc){
-  if(tc.length!==11||tc[0]==='0'||!/^\d{11}$/.test(tc))return false;
-  const d=tc.split('').map(Number);
-  const c10=((d[0]+d[2]+d[4]+d[6]+d[8])*7-(d[1]+d[3]+d[5]+d[7]))%10;
-  if(d[9]!==((c10%10+10)%10))return false;
-  return d[10]===(d.slice(0,10).reduce((a,b)=>a+b,0)%10);
-}
 function onTcInput(el){
   el.value=el.value.replace(/\D/g,'').slice(0,11);
   el.classList.remove('error');$('tcError').textContent='';
   $('loginBtn').disabled=el.value.length!==11;
 }
 function doLogin(){
-  const tc=$('tcInput').value;
-  if(!validateTC(tc)){$('tcInput').classList.add('error');$('tcError').textContent='Geçersiz TC Kimlik numarası';return;}
-  userKey=hashTC(tc);
+  const tc=$('tcInput').value.replace(/\D/g,'');
+  if(tc.length!==11){$('tcInput').classList.add('error');$('tcError').textContent='11 haneli TC Kimlik numarası girin';return;}
+  try{ userKey=hashTC(tc); }catch(e){ userKey='kp_'+tc.slice(0,4)+tc.slice(-4); }
   localStorage.setItem('kp_last',userKey);
   const existing=localStorage.getItem(userKey);
   if(existing){

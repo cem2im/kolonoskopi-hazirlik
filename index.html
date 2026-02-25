@@ -647,8 +647,28 @@ function renderDrug(){
   else{h+=tlI('bx','1','Önceki gün 18:00','1. Doz — 45ml Fleet','½ bardak su + 3 bardak sıvı.','Tuzlu — limonata ile deneyin.');h+=tlI('bx','2',m?'İşlem günü 03:00':'İşlem günü 07:00','2. Doz — 45ml Fleet','½ bardak su + 3 bardak sıvı.',m?'⏰ Erken alarm!':'Sabah sakin.');}
   h+=tlI('red','⛔','2 saat önce','DURMA SAATİ','Ağızdan hiçbir şey. Su dahil. İlaçlar az su ile.','');
   h+=`</div><div class="stop-bar">⛔ İŞLEMDEN 2 SAAT ÖNCE<br>AĞIZDAN HİÇBİR ŞEY<small>Su dahil — düzenli ilaçlar az su ile alınabilir</small></div>`;
-  h+=`<div class="info-card"><h4>Adjuvan — Bisacodyl</h4><p>Doktorunuz önerirse 1. dozdan <strong>1 saat önce 10 mg bisacodyl</strong> alınabilir.</p></div>`;
-  h+=`<div class="info-card"><h4>Kurtarma — Lavman</h4><p>Dışkı berrak değilse doktorunuz lavman önerebilir. <strong>Kendi kararınızla uygulamayın.</strong></p></div>`;
+  h+=`<div style="margin-top:20px"><div class="tasks-head">💊 Yardımcı İlaçlar (Adjuvan)</div></div>`;
+
+  h+=`<div class="info-card"><h4>💊 Bisacodyl (Dulcolax) — Stimülan Laksatif</h4>
+<p><strong>Ne zaman:</strong> Doktorunuz önerdiğinde — özellikle kronik kabızlık, diyabet veya önceki yetersiz hazırlık durumunda.</p>
+<p><strong>Doz:</strong> 1. dozdan <strong>1 saat önce 10–15 mg</strong> (2-3 tablet) oral.</p>
+<p><strong>Kaynak:</strong> USMSTF 2025 — yüksek riskli hastalarda önerilir.</p></div>`;
+
+  h+=`<div class="info-card"><h4>🍃 Bekunis (Senna/Sennosid A+B) — Bitkisel Laksatif</h4>
+<p><strong>Ne zaman:</strong> Doktorunuz önerdiğinde — özellikle:</p>
+<p>• Kronik kabızlık eğilimi olan hastalar<br>• Daha önce yetersiz bağırsak hazırlığı olanlar<br>• Yaşlı hastalar veya düşük hareket kapasitesi<br>• Opioid veya kabızlık yapan ilaç kullananlar</p>
+<p><strong>Doz:</strong> Hazırlıktan önceki gece yatmadan önce <strong>2–3 tablet.</strong></p>
+<p><strong>Not:</strong> Spastik kabızlık ve bağırsak tıkanıklığında kullanılmaz. Doktorunuz karar verir.</p></div>`;
+
+  h+=`<div class="info-card"><h4>💨 Simetikon (Ozmolak / Sab Simplex) — Köpük Giderici</h4>
+<p><strong>Ne zaman:</strong> USMSTF 2025 tüm kolonoskopilerde adjuvan olarak <strong>önerir</strong> (orta düzey kanıt).</p>
+<p>• Gaz ve şişkinlik şikayeti olan hastalar<br>• Köpüklenme nedeniyle görüntü kalitesi düşük olanlar<br>• Görüntü netliğini artırmak isteyen tüm hastalar</p>
+<p><strong>Doz:</strong> Hazırlık ilacıyla birlikte <strong>en az 320 mg</strong> oral (genellikle 4×80 mg veya 2×160 mg).</p>
+<p><strong>Etki:</strong> Mide ve bağırsaklardaki gaz kabarcıklarının yüzey gerilimini azaltır → daha temiz görüntü.</p></div>`;
+
+  h+=`<div class="info-card"><h4>🚿 Kurtarma — Lavman (Fleet Enema)</h4>
+<p><strong>Ne zaman:</strong> Hazırlık sonrası dışkı hâlâ berrak değilse, doktorunuz önerebilir.</p>
+<p><strong>Uygulama:</strong> İşlemden 2–3 saat önce. <strong>Kendi kararınızla uygulamayın.</strong></p></div>`;
   h+=`<div style="margin-top:20px"><div class="tasks-head">💡 Konfor İpuçları</div></div><div class="tips-grid"><div class="tip-card"><div class="tc-ico">🧊</div><p>Soğutun</p></div><div class="tip-card"><div class="tc-ico">🥤</div><p>Pipet kullanın</p></div><div class="tip-card"><div class="tc-ico">🍬</div><p>Nane / limon</p></div><div class="tip-card"><div class="tc-ico">🚶</div><p>Yürüyüş yapın</p></div><div class="tip-card"><div class="tc-ico">🧴</div><p>Vazelin sürün</p></div><div class="tip-card"><div class="tc-ico">🧻</div><p>Islak mendil</p></div><div class="tip-card"><div class="tc-ico">👖</div><p>Rahat pantolon</p></div><div class="tip-card"><div class="tc-ico">📱</div><p>Şarj + telefon</p></div></div>`;
   $('drugEl').innerHTML=h;
 }
